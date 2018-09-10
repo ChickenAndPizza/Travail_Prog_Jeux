@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 1067767125
+    locked: 0
+  - name: BGWalls
+    uniqueID: 314689021
+    locked: 0
+  - name: OtherFloor
+    uniqueID: 2096514919
+    locked: 0
+  - name: Floor
+    uniqueID: 462386645
+    locked: 0
