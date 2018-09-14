@@ -12,13 +12,18 @@ public class PlayerAnimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        bool runningRight = Input.GetKey(KeyCode.D);
-        bool runningLeft = Input.GetKey(KeyCode.A);
+        bool running;
+        if(Input.GetAxis("Horizontal") !=0 )
+        {
+            running = true;
+        }
+        else
+        {
+            running = false;
+        }
         bool jumpingRight = Input.GetKey(KeyCode.Space);
-
-        mAnimator.SetBool("RunningRight", runningRight);
-        mAnimator.SetBool("RunningLeft", runningLeft);
+        
+        mAnimator.SetBool("Running", running);
         mAnimator.SetBool("JumpingRight", jumpingRight);
     }
 }
