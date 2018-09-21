@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Move_Prot : MonoBehaviour {
 
     public int playerSpeed = 10;
-    public int playerJumpPower = 500;
+    public int playerJumpPower = 7;
     public float moveX = 2;
     public bool grounded = true;
     public bool facingRight = true;
@@ -49,7 +49,7 @@ public class Player_Move_Prot : MonoBehaviour {
     }
     void Jump()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveX, playerJumpPower);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
