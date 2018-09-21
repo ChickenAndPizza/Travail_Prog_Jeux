@@ -907,7 +907,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &205208358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,10 +1226,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 61190745007793090, guid: 8cfa590c32861124a867c5ca65a04549,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 61190745007793090, guid: 8cfa590c32861124a867c5ca65a04549,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.725
+      objectReference: {fileID: 0}
+    - target: {fileID: 61190745007793090, guid: 8cfa590c32861124a867c5ca65a04549,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148479626382388, guid: 8cfa590c32861124a867c5ca65a04549, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 114992404026088234, guid: 8cfa590c32861124a867c5ca65a04549,
         type: 2}
       propertyPath: playerJumpPower
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cfa590c32861124a867c5ca65a04549, type: 2}
@@ -8378,7 +8397,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
 --- !u!50 &835834407
 Rigidbody2D:
   serializedVersion: 4
@@ -9130,6 +9149,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1587236572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148479626382388, guid: 8cfa590c32861124a867c5ca65a04549,
+    type: 2}
+  m_PrefabInternal: {fileID: 461383023}
+--- !u!70 &1587236580
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1587236572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: f1124cf9ace63b242a8751bae10ad96b, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.475, y: 0.725}
+  m_Direction: 0
 --- !u!1 &1725159162
 GameObject:
   m_ObjectHideFlags: 0

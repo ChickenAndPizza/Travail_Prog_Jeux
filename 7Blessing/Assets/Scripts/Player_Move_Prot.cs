@@ -9,11 +9,10 @@ public class Player_Move_Prot : MonoBehaviour {
     public float moveX = 2;
     public bool grounded = true;
     public bool facingRight = true;
-    private Animator mAnimator;
-        // Use this for initialization
-        void Start()
+    // Use this for initialization
+    void Start()
     {
-        mAnimator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -24,7 +23,6 @@ public class Player_Move_Prot : MonoBehaviour {
             Jump();
             grounded = false;
         }
-        mAnimator.SetBool("Grounded", grounded);
         MovePlayer();
     }
 
@@ -40,15 +38,6 @@ public class Player_Move_Prot : MonoBehaviour {
             FlipPlayer();
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        mAnimator.SetFloat("VelocityY", gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        if(mAnimator.GetFloat("VelocityY") != 0)
-        {
-            grounded = false;
-        }
-        else
-        {
-            grounded = true;
-        }
     }
 
     void FlipPlayer()
@@ -60,14 +49,13 @@ public class Player_Move_Prot : MonoBehaviour {
     }
     void Jump()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(moveX,playerJumpPower);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveX, playerJumpPower);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-            mAnimator.SetBool("Grounded", grounded);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
