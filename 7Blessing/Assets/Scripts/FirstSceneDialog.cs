@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FirstSceneDialog : MonoBehaviour {
     DialogManager dialogManager;
+    [SerializeField] DialogText dialogText;
     // Use this for initialization
     void Awake()
     {
