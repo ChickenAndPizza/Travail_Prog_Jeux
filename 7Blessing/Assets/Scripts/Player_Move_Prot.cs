@@ -7,8 +7,10 @@ public class Player_Move_Prot : MonoBehaviour {
     public int playerSpeed = 10;
     public int playerJumpPower = 500;
     public float moveX = 2;
-    public bool grounded = true;
+    public bool grounded = false;
     public bool facingRight = true;
+    private bool jumping = false;
+    private bool running = false;
     private Animator mAnimator;
         // Use this for initialization
         void Start()
@@ -25,7 +27,17 @@ public class Player_Move_Prot : MonoBehaviour {
             grounded = false;
         }
         mAnimator.SetBool("Grounded", grounded);
-        MovePlayer();
+        if(Input.GetAxis("Horizontal") != 0)
+        {
+            running = true;
+            MovePlayer();
+        }
+        else
+        {
+            running = false;
+        }
+        mAnimator.SetBool("Running", running);
+        mAnimator.SetBool("JumpingRight", jumping);
     }
 
     void MovePlayer()
@@ -61,13 +73,14 @@ public class Player_Move_Prot : MonoBehaviour {
     void Jump()
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        jumping = true;
     }
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-            mAnimator.SetBool("Grounded", grounded);
+            jumping = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
