@@ -13,14 +13,16 @@ public class DialogText : ScriptableObject {
     }
 
     public DialogText GetNextDialog()
-    {
+    { 
         return this.nextDialog;
     }
 
     public bool IsNextDialog()
     {
-        if (nextDialog)
+        if (nextDialog != null)
+        {
             return true;
+        }
         return false;
     }
 }

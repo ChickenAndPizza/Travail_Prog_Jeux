@@ -81,24 +81,25 @@ public class Player_Move_Prot : MonoBehaviour {
 
     private void ManageInteraction()
     {
-        //if (Input.GetAxis("E") != 0)
-        //{
-        //    if (!eIsPressed)
-        //    {
-        //        eIsPressed = true;
-        //        ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
-        //        RaycastHit2D[] interactionHit = new RaycastHit2D[16];
-        //        int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, Vector2.up, contactFilter2DInteraction, interactionHit);
-        //        List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
-        //        if (hitBufferListInteraction.Count > 0)
-        //        {
-        //            hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    eIsPressed = false;
-        //}
+        if (Input.GetAxis("E") != 0)
+        {
+            if (!eIsPressed)
+            {
+                eIsPressed = true;
+
+                //ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
+                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                //int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, Vector2.up, contactFilter2DInteraction, interactionHit);
+                //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
+                //if (hitBufferListInteraction.Count > 0)
+                //{
+                //    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
+                //}
+            }
+        }
+        else
+        {
+            eIsPressed = false;
+        }
     }
 }

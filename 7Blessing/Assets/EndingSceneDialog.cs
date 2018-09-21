@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstSceneDialog : MonoBehaviour {
-    private bool havePlay;
+public class EndingSceneDialog : MonoBehaviour {
     DialogManager dialogManager;
     [SerializeField] DialogText dialogText;
     // Use this for initialization
-    void Awake()
-    {
+    void Awake () {
         dialogManager = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<DialogManager>();
         dialogManager.StartDialog(dialogText);
-
     }
 }

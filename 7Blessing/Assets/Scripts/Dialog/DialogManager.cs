@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour {
     private DialogText currentDialog;
     private DialogDisplayer currentDialogDisplayer;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -25,7 +25,7 @@ public class DialogManager : MonoBehaviour {
     public void StartDialog(DialogText newDialog)
     {
         dialogIsInitiated = true;
-        //player.GetComponent<Player_Move_Prot>().DisableControl();
+        player.GetComponent<Player_Move_Prot>().DisableControl();
         currentDialog = newDialog;
         GameObject currentDialogObject = Instantiate(dialogPrefab, mainCanvas.transform);
         currentDialogDisplayer = currentDialogObject.GetComponent<DialogDisplayer>();
