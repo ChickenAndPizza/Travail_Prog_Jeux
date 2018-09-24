@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class Player_Move_Prot : MonoBehaviour {
     public float moveX = 2;
     public bool grounded = true;
     public bool facingRight = true;
+    private bool controlAreEnable = true;
+    public bool eIsPressed = false;
     // Use this for initialization
     void Start()
     {
@@ -18,12 +21,17 @@ public class Player_Move_Prot : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Jump")!= 0 && grounded)
+        if(controlAreEnable)
         {
-            Jump();
-            grounded = false;
+            if (Input.GetAxis("Jump")!= 0 && grounded)
+            {
+                Jump();
+                grounded = false;
+            }
+            MovePlayer();
+            ManageInteraction();
         }
-        MovePlayer();
+
     }
 
     void MovePlayer()
@@ -57,6 +65,41 @@ public class Player_Move_Prot : MonoBehaviour {
         {
             grounded = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+    }
+
+    public void DisableControl()
+    {
+        this.controlAreEnable = false;
+        this.moveX = 0;
+    }
+
+    public void EnableControl()
+    {
+        this.controlAreEnable = true;
+    }
+
+    private void ManageInteraction()
+    {
+        if (Input.GetAxis("E") != 0)
+        {
+            if (!eIsPressed)
+            {
+                eIsPressed = true;
+
+                //ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
+                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                //int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, Vector2.up, contactFilter2DInteraction, interactionHit);
+                //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
+                //if (hitBufferListInteraction.Count > 0)
+                //{
+                //    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
+                //}
+            }
+        }
+        else
+        {
+            eIsPressed = false;
         }
     }
 }
