@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player_Move_Prot : MonoBehaviour {
 
     public int playerSpeed = 10;
-    public int playerJumpPower = 500;
+    public int playerJumpPower = 7;
     public float moveX = 2;
     public bool grounded = false;
     public bool facingRight = true;
@@ -14,11 +14,10 @@ public class Player_Move_Prot : MonoBehaviour {
     private bool running = false;
     private bool controlAreEnable = true;
     public bool eIsPressed = false;
-    private Animator mAnimator;
-        // Use this for initialization
-        void Start()
+    // Use this for initialization
+    void Start()
     {
-        mAnimator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -31,7 +30,6 @@ public class Player_Move_Prot : MonoBehaviour {
                 Jump();
                 grounded = false;
             }
-        mAnimator.SetBool("Grounded", grounded);
         if(Input.GetAxis("Horizontal") != 0)
         {
             running = true;
@@ -60,15 +58,6 @@ public class Player_Move_Prot : MonoBehaviour {
             FlipPlayer();
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        mAnimator.SetFloat("VelocityY", gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        if(mAnimator.GetFloat("VelocityY") != 0)
-        {
-            grounded = false;
-        }
-        else
-        {
-            grounded = true;
-        }
     }
 
     void FlipPlayer()
@@ -80,7 +69,7 @@ public class Player_Move_Prot : MonoBehaviour {
     }
     void Jump()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveX, playerJumpPower);
         jumping = true;
     }
     void OnCollisionEnter2D(Collision2D other)
