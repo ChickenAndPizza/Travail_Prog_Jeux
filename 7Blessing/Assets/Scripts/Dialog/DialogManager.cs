@@ -7,6 +7,8 @@ public class DialogManager : MonoBehaviour {
     [SerializeField] public GameObject dialogPrefab;
     [SerializeField] public GameObject mainCanvas;
 
+    public bool IsLastDialog = false;
+
     private bool actionAxisInUser = true;
     private GameObject player;
     private bool dialogIsInitiated = false;
@@ -15,6 +17,7 @@ public class DialogManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         player = GameObject.FindGameObjectWithTag("Player");
+        IsLastDialog = false;
 	}
 	
 	// Update is called once per frame
@@ -55,6 +58,7 @@ public class DialogManager : MonoBehaviour {
         dialogIsInitiated = false;
         currentDialogDisplayer.CloseDialog();
         player.GetComponent<Player_Move_Prot>().EnableControl();
+        IsLastDialog = true;
     }
 
     private bool ShouldProcessInput()

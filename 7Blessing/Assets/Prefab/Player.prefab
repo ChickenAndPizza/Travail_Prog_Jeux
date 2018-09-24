@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4122290549646388}
-  - component: {fileID: 114998640741274976}
   - component: {fileID: 114992404026088234}
   - component: {fileID: 50021132182193802}
   - component: {fileID: 95117836423218880}
@@ -130,18 +129,11 @@ MonoBehaviour:
   moveX: 2
   grounded: 1
   facingRight: 0
+  GroundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   eIsPressed: 0
---- !u!114 &114998640741274976
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148479626382388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fb4e4adaa85194bb2e4c02882849d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212788740247180034
 SpriteRenderer:
   m_ObjectHideFlags: 1
