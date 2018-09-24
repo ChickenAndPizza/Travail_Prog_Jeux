@@ -42,8 +42,8 @@ public class Player_Move_Prot : MonoBehaviour {
         {
             running = false;
         }
-        mAnimator.SetBool("Running", running);
-        mAnimator.SetBool("JumpingRight", jumping);
+       /* mAnimator.SetBool("Running", running);
+        mAnimator.SetBool("JumpingRight", jumping);*/
     }
 
     void MovePlayer()
