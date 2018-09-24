@@ -16,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -58,6 +58,7 @@ TagManager:
     locked: 0
   - name: Decorations
     uniqueID: 3779584767
+    locked: 0
   - name: Player
     uniqueID: 1613868927
     locked: 0
