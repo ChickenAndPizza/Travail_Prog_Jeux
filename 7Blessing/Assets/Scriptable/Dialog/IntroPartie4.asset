@@ -9,7 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: Test de text d'intro
+  m_Name: IntroPartie4
   m_EditorClassIdentifier: 
-  scriptableText: "Test pour un text qui va appara\xEEtre dans la dialogBox"
-  nextDialog: {fileID: 11400000, guid: 18d748ee1d6d25741983daebbf5b608d, type: 2}
+  scriptableText: "Vous devrez parcourir tous les quatre coins de la Terre afin d'acqu\xE9rir
+    vos pouvoirs sacr\xE9s. Sur votre chemin, vous recontrerai des ennemis, mais aussi
+    des alli\xE9s. "
+  nextDialog: {fileID: 11400000, guid: 071ed4b762496214f9b1948a735808fe, type: 2}

@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: EndingDialog
+  m_Name: IntroPartie2
   m_EditorClassIdentifier: 
-  scriptableText: Test de fin de niveau
-  nextDialog: {fileID: 0}
+  scriptableText: "De braves et valeureux guerriers ont s\xFB nous prot\xE9ger de
+    ces monstres, mais voil\xE0 que notre dernier protecteur s'est \xE9teint."
+  nextDialog: {fileID: 11400000, guid: a2e69db4a62d5e946bbe229f4924b755, type: 2}
