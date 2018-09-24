@@ -126,10 +126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  playerJumpPower: 250
+  playerJumpPower: 1500
   moveX: 2
   grounded: 1
   facingRight: 0
+  eIsPressed: 0
 --- !u!114 &114998640741274976
 MonoBehaviour:
   m_ObjectHideFlags: 1

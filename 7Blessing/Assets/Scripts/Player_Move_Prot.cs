@@ -48,9 +48,7 @@ public class Player_Move_Prot : MonoBehaviour {
 
         }
 
-        mAnimator.SetBool("Running", running);
         mAnimator.SetBool("Grounded", grounded);
-        mAnimator.SetBool("JumpingRight", jumping);
     }
 
     void MovePlayer()

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
+  m_Name: IntroPartie1
+  m_EditorClassIdentifier: 
+  scriptableText: "Depuis des si\xE8cles, la race humaine a \xE9t\xE9 pers\xE9cut\xE9e
+    par les cr\xE9atures de l'ombre. Venus dans le but de d\xE9truire toute source
+    de vie sur Terre, les d\xE9mons essayent depuis leur arriv\xE9e d'annihiler les
+    civilisations sur notre plan\xE8te."
+  nextDialog: {fileID: 11400000, guid: 473c9e3bb3dabac4d88034407a45837e, type: 2}
