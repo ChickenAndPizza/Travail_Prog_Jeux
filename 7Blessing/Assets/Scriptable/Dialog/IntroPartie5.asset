@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
+  m_Name: IntroPartie5
+  m_EditorClassIdentifier: 
+  scriptableText: "Vous devrez obtenir toutes les b\xE9n\xE9dictions des anges afin
+    d'obtenir le pouvoir n\xE9cessaire pour terrasser le mal une fois pour de bon."
+  nextDialog: {fileID: 11400000, guid: be1bb601a6fbaca488bd6cf628c004cc, type: 2}
