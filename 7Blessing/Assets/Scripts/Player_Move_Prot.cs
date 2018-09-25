@@ -9,7 +9,7 @@ public class Player_Move_Prot : MonoBehaviour {
     public int playerJumpPower = 7;
     public float moveX = 0;
     public bool grounded = false;
-    public bool facingRight = true;
+    public bool facingLeft = false;
     private bool jumping = false;
     private bool running = false;
     private bool controlAreEnable = true;
@@ -56,17 +56,46 @@ public class Player_Move_Prot : MonoBehaviour {
     void MovePlayer()
     {
         moveX = Input.GetAxis("Horizontal");
-        if (moveX < 0.0f && !facingRight)
+        if (moveX < 0.0f && !facingLeft)
         {
             FlipPlayer();
         }
-        else if(moveX > 0.0f && facingRight)
+        else if(moveX > 0.0f && facingLeft)
         {
             FlipPlayer();
+        }
+        if ((moveX < 0.0f && checkLeft()) || (moveX > 0.0f && checkRight()))
+        {
+            moveX = 0.0f;
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
         mAnimator.SetFloat("VelocityY", gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        
+    }
+
+    bool checkRight()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.right;
+        float distance = 0.3f;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool checkLeft()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.left;
+        float distance = 0.3f;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
     }
 
     bool IsGrounded()
@@ -87,7 +116,7 @@ public class Player_Move_Prot : MonoBehaviour {
 
     void FlipPlayer()
     {
-        facingRight = !facingRight;
+        facingLeft = !facingLeft;
         Vector2 localscale = gameObject.transform.localScale;
         localscale.x *= -1;
         transform.localScale = localscale;
