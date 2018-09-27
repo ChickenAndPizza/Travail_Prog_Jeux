@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: IntroPartie4
   m_EditorClassIdentifier: 
   scriptableText: "Vous devrez parcourir tous les quatre coins de la Terre afin d'acqu\xE9rir
-    vos pouvoirs sacr\xE9s. Sur votre chemin, vous recontrerai des ennemis, mais aussi
-    des alli\xE9s. "
+    vos pouvoirs sacr\xE9s. Sur votre chemin, vous rencontrerai des ennemis, mais
+    aussi des alli\xE9s. "
   nextDialog: {fileID: 11400000, guid: 071ed4b762496214f9b1948a735808fe, type: 2}
