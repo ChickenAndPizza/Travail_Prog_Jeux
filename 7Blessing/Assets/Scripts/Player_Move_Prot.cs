@@ -151,12 +151,16 @@ public class Player_Move_Prot : MonoBehaviour {
         if (Input.GetAxis("E") != 0)
         {
             if (!eIsPressed)
-            {
+            {   
                 eIsPressed = true;
-
-                //ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
-                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
-                //int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, Vector2.up, contactFilter2DInteraction, interactionHit);
+                //ContactFilter2D contactFilter2DInteraction = new ContactFilter2D();
+                //contactFilter2DInteraction.SetLayerMask(LayerMask.NameToLayer("Ending"));
+                    //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                if(Physics2D.Raycast(gameObject.transform.position, transform.forward, 1, 9))
+                {
+                    EndingSceneDialog endingScene = gameObject.GetComponent<EndingSceneDialog>();
+                    endingScene.Interact();
+                }
                 //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
                 //if (hitBufferListInteraction.Count > 0)
                 //{
