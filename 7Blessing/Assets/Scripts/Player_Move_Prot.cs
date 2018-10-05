@@ -69,7 +69,7 @@ public class Player_Move_Prot : MonoBehaviour {
             moveX = 0.0f;
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        mAnimator.SetFloat("VelocityY", gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        mAnimator.SetFloat("VelocityY", mPlayerBody.velocity.y);
     }
 
     bool checkRight()
