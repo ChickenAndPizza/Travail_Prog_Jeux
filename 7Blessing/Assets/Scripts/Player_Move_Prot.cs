@@ -15,12 +15,14 @@ public class Player_Move_Prot : MonoBehaviour {
     private bool controlAreEnable = true;
     public Transform GroundCheck;
     public LayerMask groundLayer;
+    public LayerMask endingLayer;
     public bool eIsPressed = false;
     private Animator mAnimator;
     private Rigidbody2D mPlayerBody;
     // Use this for initialization
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         mAnimator = GetComponent<Animator>();
         mPlayerBody = GetComponent<Rigidbody2D>();
     }
@@ -155,11 +157,24 @@ public class Player_Move_Prot : MonoBehaviour {
                 eIsPressed = true;
                 //ContactFilter2D contactFilter2DInteraction = new ContactFilter2D();
                 //contactFilter2DInteraction.SetLayerMask(LayerMask.NameToLayer("Ending"));
-                    //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
-                if(Physics2D.Raycast(gameObject.transform.position, transform.forward, 1, 9))
+                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                Vector2 direction = new Vector2();
+                if (facingLeft == true)
                 {
-                    EndingSceneDialog endingScene = gameObject.GetComponent<EndingSceneDialog>();
-                    endingScene.Interact();
+                    direction = Vector2.left;
+                }
+                else
+                {
+                    direction = Vector2.right;
+                }
+                if(Physics2D.Raycast(transform.position, direction, 0.5f, endingLayer))
+                {
+                    GameObject endingScene = GameObject.FindWithTag("EndingScene");
+                    if (endingScene != null)
+                    {
+                        EndingSceneDialog interact = endingScene.GetComponent<EndingSceneDialog>();
+                        interact.Interact();
+                    }
                 }
                 //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
                 //if (hitBufferListInteraction.Count > 0)

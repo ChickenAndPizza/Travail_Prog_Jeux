@@ -7,25 +7,32 @@ public class EndingSceneDialog : MonoBehaviour {
     DialogManager dialogManager;
     [SerializeField] DialogText dialogText;
     [SerializeField] string nextSceneName;
-    //[SerializeField] AudioClip endingSound;
+    [SerializeField] AudioClip endingSound;
+    [SerializeField] AudioClip nextSceneSound;
 
-    //private AudioSource audioSource;
+    private AudioSource audioSource;
     public void Interact()
     {
-        //audioSource.Play();
-        //endingSound.Pl
+        audioSource.PlayOneShot(endingSound);
         dialogManager.StartDialog(dialogText);
     }
 
     // Use this for initialization
     void Awake () {
         dialogManager = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<DialogManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update () {
 		if(nextSceneName != null && dialogManager.IsLastDialog)
         {
+            GameObject music = GameObject.FindGameObjectWithTag("MusicPlayer");
+            if (music != null)
+            {
+                MusicPlayer musicPlayer = music.GetComponent<MusicPlayer>();
+                musicPlayer.ChangeMusic(nextSceneSound);
+            }
             SceneManager.LoadScene(nextSceneName);
         }
 	}
