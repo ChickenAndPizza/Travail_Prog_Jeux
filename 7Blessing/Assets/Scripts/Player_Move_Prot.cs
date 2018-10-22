@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Move_Prot : MonoBehaviour {
 
@@ -22,7 +23,10 @@ public class Player_Move_Prot : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         mAnimator = GetComponent<Animator>();
         mPlayerBody = GetComponent<Rigidbody2D>();
     }
@@ -155,9 +159,6 @@ public class Player_Move_Prot : MonoBehaviour {
             if (!eIsPressed)
             {   
                 eIsPressed = true;
-                //ContactFilter2D contactFilter2DInteraction = new ContactFilter2D();
-                //contactFilter2DInteraction.SetLayerMask(LayerMask.NameToLayer("Ending"));
-                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
                 Vector2 direction = new Vector2();
                 if (facingLeft == true)
                 {
@@ -167,6 +168,7 @@ public class Player_Move_Prot : MonoBehaviour {
                 {
                     direction = Vector2.right;
                 }
+
                 if(Physics2D.Raycast(transform.position, direction, 0.5f, endingLayer))
                 {
                     GameObject endingScene = GameObject.FindWithTag("EndingScene");
@@ -176,11 +178,6 @@ public class Player_Move_Prot : MonoBehaviour {
                         interact.Interact();
                     }
                 }
-                //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
-                //if (hitBufferListInteraction.Count > 0)
-                //{
-                //    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
-                //}
             }
         }
         else
