@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
-    private float timeBetweenAttack;
+    private float timeBetweenAttack = 0;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip attackSound;
     [SerializeField] float startTimeBetweenAttack;
     [SerializeField] Rigidbody2D player;
 
@@ -15,6 +17,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -26,12 +29,24 @@ public class PlayerAttack : MonoBehaviour {
                 if(player.velocity.x != 0)
                 {
                     playerAnim.Play("PlayerRunningAttack");
+                    audioSource.PlayOneShot(attackSound);
                 }
                 else
                 {
                     playerAnim.Play("PlayerAttack");
+                    audioSource.PlayOneShot(attackSound);
                 }
-                Collider2D[] ennemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                ContactFilter2D contactFilter2DAttack = BuildContactFilter2DForLayer("Attackable");
+                Collider2D[] listOfAttackable = new Collider2D[16];
+                int numberOfCollisions = Physics2D.OverlapCircle(attackPos.position, attackRange, contactFilter2DAttack, listOfAttackable);
+                print(numberOfCollisions);
+                if(numberOfCollisions > 0)
+                {
+                    for(int cpt = 0; cpt < numberOfCollisions; cpt++)
+                    {
+                        listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked();
+                    }
+                }
 
                 timeBetweenAttack = startTimeBetweenAttack;
             }
@@ -46,5 +61,14 @@ public class PlayerAttack : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    private ContactFilter2D BuildContactFilter2DForLayer(string LayerName)
+    {
+        ContactFilter2D contactFilter2DAttack = new ContactFilter2D();
+        contactFilter2DAttack.useTriggers = false;
+        contactFilter2DAttack.SetLayerMask(Physics2D.GetLayerCollisionMask(LayerMask.NameToLayer(LayerName)));
+        contactFilter2DAttack.useLayerMask = true;
+        return contactFilter2DAttack;
     }
 }
