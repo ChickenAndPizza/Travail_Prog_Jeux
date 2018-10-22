@@ -9,6 +9,7 @@ TagManager:
   - EndingScene
   - Monster
   - MusicPlayer
+  - Storyteller
   layers:
   - Default
   - TransparentFX

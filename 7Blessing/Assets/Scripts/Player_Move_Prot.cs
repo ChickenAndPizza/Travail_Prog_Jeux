@@ -171,10 +171,29 @@ public class Player_Move_Prot : MonoBehaviour {
 
                 if(Physics2D.Raycast(transform.position, direction, 0.5f, endingLayer))
                 {
-                    GameObject endingScene = GameObject.FindWithTag("EndingScene");
-                    if (endingScene != null)
+                    //ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
+                    //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                    //int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, direction, contactFilter2DInteraction, interactionHit);
+                    //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
+                    //if (hitBufferListInteraction.Count > 0)
+                    //{
+                    //    for (int cpt = 0; cpt < 16; cpt++)
+                    //    {
+                    //        hitBufferListInteraction[cpt].transform.gameObject.GetComponent<Interaction>().Interact();
+                    //    }
+                    //    
+                    //}
+
+                    //GameObject endingScene = GameObject.FindWithTag("EndingScene");
+                    //if (endingScene != null)
+                    //{
+                    //    EndingSceneDialog interact = endingScene.GetComponent<EndingSceneDialog>();
+                    //    interact.Interact();
+                    //}
+                    GameObject interaction = GameObject.FindGameObjectWithTag("Storyteller");
+                    if(interaction != null)
                     {
-                        EndingSceneDialog interact = endingScene.GetComponent<EndingSceneDialog>();
+                        InteractionDialog interact = interaction.GetComponentInChildren<InteractionDialog>();
                         interact.Interact();
                     }
                 }

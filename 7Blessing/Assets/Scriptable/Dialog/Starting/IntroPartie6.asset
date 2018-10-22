@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptableText: Votre histoire commence maintenant.
   nextDialog: {fileID: 0}
+  IsChangingSceneDialog: 1

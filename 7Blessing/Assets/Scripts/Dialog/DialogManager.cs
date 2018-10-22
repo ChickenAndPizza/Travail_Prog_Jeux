@@ -18,10 +18,10 @@ public class DialogManager : MonoBehaviour {
 	void Awake () {
         player = GameObject.FindGameObjectWithTag("Player");
         IsLastDialog = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
         ProcessInput();
 	}
 
