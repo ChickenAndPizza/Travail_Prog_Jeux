@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class RedEnemy : MonoBehaviour {
+public class RedEnemy : Enemies
+{
 
     [SerializeField] Vector2 movementVector = new Vector2(10f, 10f);
     [SerializeField] float period = 2f;
@@ -12,7 +13,6 @@ public class RedEnemy : MonoBehaviour {
     [SerializeField]
     float movementFactor;
     Vector2 startingPos;
-
 
     void Start()
     {
@@ -28,10 +28,10 @@ public class RedEnemy : MonoBehaviour {
         }*/
 
         /*SI JOUEUR COLLIDER : */
-        /*if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Invoke("die", DestroyFireBallAfterCollisionTime);
-        }*/
+            Dommages();
+        }
     }
 
     void Update()
@@ -46,5 +46,16 @@ public class RedEnemy : MonoBehaviour {
         Vector2 offset = movementVector * rawSinWave / 120;
         transform.position = startingPos + offset;
 
+    }
+
+    private void Dommages()
+    {
+        //if health <= 0
+        Invoke("DestroyMonster", 0);
+    }
+
+    private void DestroyMonster()
+    {
+        Destroy(transform.parent.gameObject);
     }
 }

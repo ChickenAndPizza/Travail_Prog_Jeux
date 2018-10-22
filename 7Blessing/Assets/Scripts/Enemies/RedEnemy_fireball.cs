@@ -42,6 +42,10 @@ public class RedEnemy_fireball : MonoBehaviour {
         {
             Invoke("DestroyFireBall", DestroyFireBallAfterCollisionTime);
         }
+        if (collision.gameObject.tag != "Enemy")
+        {
+            Invoke("DestroyFireBall", DestroyFireBallAfterCollisionTime);
+        }
     }
 
     private void DestroyFireBall()
