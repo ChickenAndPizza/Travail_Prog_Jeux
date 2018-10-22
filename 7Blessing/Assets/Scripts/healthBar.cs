@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthBar : MonoBehaviour {
+public class HealthBar : MonoBehaviour {
     public Image currentHealthBar;
 
-    private float hitPoints = 100;
+    public float currentHitPoints = 100;
     private float maxHitPoints = 100;
 
     private void Start()
@@ -21,7 +21,7 @@ public class healthBar : MonoBehaviour {
 
     private void UpdateHealthBar()
     {
-        float ratio = hitPoints / maxHitPoints;
+        float ratio = currentHitPoints / maxHitPoints;
         currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
         if (ratio < 0.25f)
         {
@@ -33,20 +33,21 @@ public class healthBar : MonoBehaviour {
         }
     }
 
-    private void HealDamage(float heal)
+    public void HealDamage(float heal)
     {
-        hitPoints += heal;
+        currentHitPoints += heal;
+        if(currentHitPoints>maxHitPoints)
         {
-            hitPoints = 100;
+            currentHitPoints = 100;
         }
     }
 
-    private void TakeDamage(float dmg)
+    public void TakeDamage(float dmg)
     {
-        hitPoints -= dmg;
-        if (hitPoints < 0)
+        currentHitPoints -= dmg;
+        if (currentHitPoints < 0)
         {
-            hitPoints = 0;
+            currentHitPoints = 0;
         }
     }
 

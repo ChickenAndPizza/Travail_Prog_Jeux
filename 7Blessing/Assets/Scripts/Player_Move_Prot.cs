@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player_Move_Prot : MonoBehaviour {
 
-    public int playerSpeed = 10;
+    public int playerSpeed = 5;
     public int playerJumpPower = 7;
     public float moveX = 0;
     public bool grounded = false;
