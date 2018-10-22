@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Move_Prot : MonoBehaviour {
 
@@ -15,12 +16,17 @@ public class Player_Move_Prot : MonoBehaviour {
     private bool controlAreEnable = true;
     public Transform GroundCheck;
     public LayerMask groundLayer;
+    public LayerMask endingLayer;
     public bool eIsPressed = false;
     private Animator mAnimator;
     private Rigidbody2D mPlayerBody;
     // Use this for initialization
     void Start()
     {
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         mAnimator = GetComponent<Animator>();
         mPlayerBody = GetComponent<Rigidbody2D>();
     }
@@ -151,17 +157,27 @@ public class Player_Move_Prot : MonoBehaviour {
         if (Input.GetAxis("E") != 0)
         {
             if (!eIsPressed)
-            {
+            {   
                 eIsPressed = true;
+                Vector2 direction = new Vector2();
+                if (facingLeft == true)
+                {
+                    direction = Vector2.left;
+                }
+                else
+                {
+                    direction = Vector2.right;
+                }
 
-                //ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
-                //RaycastHit2D[] interactionHit = new RaycastHit2D[16];
-                //int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, Vector2.up, contactFilter2DInteraction, interactionHit);
-                //List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
-                //if (hitBufferListInteraction.Count > 0)
-                //{
-                //    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
-                //}
+                if(Physics2D.Raycast(transform.position, direction, 0.5f, endingLayer))
+                {
+                    GameObject endingScene = GameObject.FindWithTag("EndingScene");
+                    if (endingScene != null)
+                    {
+                        EndingSceneDialog interact = endingScene.GetComponent<EndingSceneDialog>();
+                        interact.Interact();
+                    }
+                }
             }
         }
         else
