@@ -11,18 +11,25 @@ public class PowerUp : MonoBehaviour {
     private float healingPower = 25;
     private float duration = 5f;
     private GameObject pcikUpEffect;
+    [SerializeField] AudioClip clip;
+    AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.name =="Player")
         {
+            audioSource.PlayOneShot(clip);
             if(this.name == "GreenPotion")
             {
                 StartCoroutine(PickUpGreenPotion(other));
             }
             else if(this.name =="RedPotion")
             {
-                PickUpRedPotion(other);
+                StartCoroutine(PickUpRedPotion(other));
             }
             else if (this.name == "YellowFeather")
             {
@@ -35,14 +42,21 @@ public class PowerUp : MonoBehaviour {
     {
         Player_Move_Prot stats = player.GetComponent<Player_Move_Prot>();
         stats.playerSpeed = superSpeed;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
         stats.playerSpeed = normalSpeed;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
     }
 
-    void PickUpRedPotion(Collider2D player)
+    IEnumerator PickUpRedPotion(Collider2D player)
     {
         HealthBar healthBar = player.GetComponent<HealthBar>();
         healthBar.HealDamage(healingPower);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 
@@ -50,7 +64,11 @@ public class PowerUp : MonoBehaviour {
     {
         Player_Move_Prot stats = player.GetComponent<Player_Move_Prot>();
         stats.playerJumpPower = superJumpPower;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
         stats.playerJumpPower = normalJumpPower;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
     }
 }
