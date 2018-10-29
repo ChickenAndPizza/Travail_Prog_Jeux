@@ -9,6 +9,7 @@ TagManager:
   - EndingScene
   - Monster
   - Enemy
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Ending
   - 
   - 
   - 
