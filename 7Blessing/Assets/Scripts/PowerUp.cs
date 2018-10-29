@@ -23,15 +23,15 @@ public class PowerUp : MonoBehaviour {
         if(other.name =="Player")
         {
             audioSource.PlayOneShot(clip);
-            if(this.name == "GreenPotion")
+            if(this.tag == "GreenPotion")
             {
                 StartCoroutine(PickUpGreenPotion(other));
             }
-            else if(this.name =="RedPotion")
+            else if(this.tag =="RedPotion")
             {
                 StartCoroutine(PickUpRedPotion(other));
             }
-            else if (this.name == "YellowFeather")
+            else if (this.tag == "YellowFeather")
             {
                 StartCoroutine(PickUpYellowFeather(other));
             }

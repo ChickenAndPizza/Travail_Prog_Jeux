@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour {
+public class HealthBar : MonoBehaviour
+{
     public Image currentHealthBar;
 
     public float currentHitPoints = 100;
@@ -36,7 +37,7 @@ public class HealthBar : MonoBehaviour {
     public void HealDamage(float heal)
     {
         currentHitPoints += heal;
-        if(currentHitPoints>maxHitPoints)
+        if (currentHitPoints > maxHitPoints)
         {
             currentHitPoints = 100;
         }
