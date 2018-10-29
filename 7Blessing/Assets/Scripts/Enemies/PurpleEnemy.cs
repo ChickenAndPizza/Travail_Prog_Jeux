@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurpleEnemy : Enemies {
+public class PurpleEnemy : Enemies//, Attackable
+{
 
     [SerializeField] Vector2 movementVector = new Vector2(2f, 10f);
     [SerializeField] float period = 10f;
@@ -25,11 +26,13 @@ public class PurpleEnemy : Enemies {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        /*Damagable damagable = collision.gameObject.GetComponent<Damagable>();
-        if (damagable != null)
+        /*Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        if (attackable != null)
         {
-            damagable.DealDamage(bulletDamage);
+            attackable.DealDamage(attack);
         }*/
+
+
 
         /*SI JOUEUR COLLIDER : */
         /*if (collision.gameObject.tag == "Player")

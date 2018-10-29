@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedEnemy_fireball : MonoBehaviour {
-
-    /*Rigidbody rigidBody;*/
+public class RedEnemy_fireball : MonoBehaviour//, Attackable
+{
     [SerializeField] float DestroyFireBallAfterCollisionTime;
-    [SerializeField] float maxLifeTime = 5f;
-    [SerializeField] float FireBallForce = 1500;
-    [SerializeField] int FireBallDamage = 20;
+    [SerializeField] float maxLifeTime = 5;
+    [SerializeField] float fireBallForce = 4;
+    [SerializeField] int fireBallDamage = 20;
 
     void Start()
     {
@@ -20,29 +19,18 @@ public class RedEnemy_fireball : MonoBehaviour {
 
     private void Update()
     {
-        transform.position += transform.right * -FireBallForce * Time.deltaTime;
+        transform.position += transform.right * -fireBallForce * Time.deltaTime;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*Damagable damagable = collision.gameObject.GetComponent<Damagable>();
-        if (damagable != null)
+        /*Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        if (attackable != null)
         {
-            damagable.DealDamage(bulletDamage);
+            attackable.DealDamage(fireBallDamage);
         }*/
 
-        /* SI JOUEUR COLLIDER : */
-        print(collision.gameObject.tag);
-        print(collision.gameObject.name);
-        if (collision.gameObject.tag == "Player")
-        {
-            Invoke("DestroyFireBall", DestroyFireBallAfterCollisionTime);
-        }
-        if (collision.gameObject.tag == "Ground")
-        {
-            Invoke("DestroyFireBall", DestroyFireBallAfterCollisionTime);
-        }
-        if (collision.gameObject.tag != "Enemy")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ground" || collision.gameObject.tag != "Enemy")
         {
             Invoke("DestroyFireBall", DestroyFireBallAfterCollisionTime);
         }

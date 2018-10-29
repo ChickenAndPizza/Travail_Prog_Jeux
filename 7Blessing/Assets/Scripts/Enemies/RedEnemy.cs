@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class RedEnemy : Enemies
+public class RedEnemy : Enemies//, Attackable
 {
 
     [SerializeField] Vector2 movementVector = new Vector2(10f, 10f);
@@ -21,17 +21,11 @@ public class RedEnemy : Enemies
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        /*Damagable damagable = collision.gameObject.GetComponent<Damagable>();
-        if (damagable != null)
+        /*Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        if (attackable != null)
         {
-            damagable.DealDamage(bulletDamage);
+            attackable.DealDamage(attack);
         }*/
-
-        /*SI JOUEUR COLLIDER : */
-        if (collision.gameObject.tag == "Player")
-        {
-            Dommages();
-        }
     }
 
     void Update()
@@ -46,12 +40,6 @@ public class RedEnemy : Enemies
         Vector2 offset = movementVector * rawSinWave / 120;
         transform.position = startingPos + offset;
 
-    }
-
-    private void Dommages()
-    {
-        //if health <= 0
-        Invoke("DestroyMonster", 0);
     }
 
     private void DestroyMonster()
