@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour {
+public class PlayerAttack : MonoBehaviour, Attackable{
 
     private float timeBetweenAttack = 0;
+    private PlayerStats playerStats;
     private AudioSource audioSource;
     [SerializeField] AudioClip attackSound;
     [SerializeField] float startTimeBetweenAttack;
@@ -18,6 +19,7 @@ public class PlayerAttack : MonoBehaviour {
 	void Start () {
         player = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        playerStats = GetComponent<PlayerStats>();
 	}
 	
 	// Update is called once per frame
@@ -39,12 +41,11 @@ public class PlayerAttack : MonoBehaviour {
                 ContactFilter2D contactFilter2DAttack = BuildContactFilter2DForLayer("Attackable");
                 Collider2D[] listOfAttackable = new Collider2D[16];
                 int numberOfCollisions = Physics2D.OverlapCircle(attackPos.position, attackRange, contactFilter2DAttack, listOfAttackable);
-                print(numberOfCollisions);
                 if(numberOfCollisions > 0)
                 {
                     for(int cpt = 0; cpt < numberOfCollisions; cpt++)
                     {
-                        listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked();
+                        listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
                     }
                 }
 
@@ -70,5 +71,14 @@ public class PlayerAttack : MonoBehaviour {
         contactFilter2DAttack.SetLayerMask(Physics2D.GetLayerCollisionMask(LayerMask.NameToLayer(LayerName)));
         contactFilter2DAttack.useLayerMask = true;
         return contactFilter2DAttack;
+    }
+
+    public void Attacked(int damage)
+    {
+        playerStats.health -= damage;
+        if(playerStats.health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

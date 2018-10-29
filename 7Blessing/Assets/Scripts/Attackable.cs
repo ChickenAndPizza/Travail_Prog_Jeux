@@ -2,17 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Attackable : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public abstract void Attacked();
+public interface Attackable  {
+    void Attacked(int damage);
 }
