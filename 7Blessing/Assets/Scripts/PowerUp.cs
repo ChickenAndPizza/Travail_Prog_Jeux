@@ -40,12 +40,12 @@ public class PowerUp : MonoBehaviour {
 
     IEnumerator PickUpGreenPotion(Collider2D player)
     {
-        Player_Move_Prot stats = player.GetComponent<Player_Move_Prot>();
-        stats.playerSpeed = superSpeed;
+        PlayerStats stats = player.GetComponent<PlayerStats>();
+        stats.speed = superSpeed;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        stats.playerSpeed = normalSpeed;
+        stats.speed = normalSpeed;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<Collider2D>().enabled = true;
     }
@@ -62,12 +62,12 @@ public class PowerUp : MonoBehaviour {
 
     IEnumerator PickUpYellowFeather(Collider2D player)
     {
-        Player_Move_Prot stats = player.GetComponent<Player_Move_Prot>();
-        stats.playerJumpPower = superJumpPower;
+        PlayerStats stats = player.GetComponent<PlayerStats>();
+        stats.jumpPower = superJumpPower;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        stats.playerJumpPower = normalJumpPower;
+        stats.jumpPower = normalJumpPower;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<Collider2D>().enabled = true;
     }

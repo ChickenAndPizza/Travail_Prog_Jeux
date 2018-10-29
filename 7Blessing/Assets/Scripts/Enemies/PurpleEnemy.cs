@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurpleEnemy : Enemies//, Attackable
+public class PurpleEnemy : Enemies, Attackable
 {
-
+    private AudioSource audioSource;
+    [SerializeField] AudioClip dammageSound;
     [SerializeField] Vector2 movementVector = new Vector2(2f, 10f);
     [SerializeField] float period = 10f;
 
@@ -19,6 +20,7 @@ public class PurpleEnemy : Enemies//, Attackable
     private float moveX = 0;
 
     void Start () {
+        audioSource = GetComponent<AudioSource>();
         startingPos = transform.position;
         offset = transform.position;
         mAnimator = GetComponent<Animator>();
@@ -26,11 +28,11 @@ public class PurpleEnemy : Enemies//, Attackable
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        /*Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        Attackable attackable = collision.gameObject.GetComponent<Attackable>();
         if (attackable != null)
         {
-            attackable.DealDamage(attack);
-        }*/
+            attackable.Attacked(attack);
+        }
 
 
 
@@ -71,5 +73,21 @@ public class PurpleEnemy : Enemies//, Attackable
         Vector2 localscale = gameObject.transform.localScale;
         localscale.x *= -1;
         transform.localScale = localscale;
+    }
+
+    public void Attacked(int damage)
+    {
+        audioSource.PlayOneShot(dammageSound);
+        health -= damage;
+        if (health <= 0)
+        {
+            DestroyMonster();
+        }
+        
+    }
+
+    private void DestroyMonster()
+    {
+        Destroy(gameObject);
     }
 }

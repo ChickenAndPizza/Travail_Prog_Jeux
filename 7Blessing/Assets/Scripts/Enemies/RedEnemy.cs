@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class RedEnemy : Enemies//, Attackable
+public class RedEnemy : Enemies, Attackable
 {
-
+    private AudioSource audioSource;
+    [SerializeField] AudioClip dammageSound;
     [SerializeField] Vector2 movementVector = new Vector2(10f, 10f);
     [SerializeField] float period = 2f;
 
@@ -16,16 +17,18 @@ public class RedEnemy : Enemies//, Attackable
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startingPos = transform.position;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        /*Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+        
         if (attackable != null)
         {
-            attackable.DealDamage(attack);
-        }*/
+            attackable.Attacked(attack);
+        }
     }
 
     void Update()
@@ -45,5 +48,16 @@ public class RedEnemy : Enemies//, Attackable
     private void DestroyMonster()
     {
         Destroy(transform.parent.gameObject);
+    }
+
+    public void Attacked(int damage)
+    {
+        audioSource.PlayOneShot(dammageSound);
+        print("red");
+        health -= damage;
+        if(health <= 0)
+        {
+            DestroyMonster();
+        }
     }
 }
