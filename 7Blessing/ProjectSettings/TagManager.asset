@@ -9,6 +9,9 @@ TagManager:
   - EndingScene
   - Monster
   - MusicPlayer
+  - RedPotion
+  - GreenPotion
+  - YellowFeather
   layers:
   - Default
   - TransparentFX
