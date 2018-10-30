@@ -23,9 +23,8 @@ public class EndingSceneDialog : Interaction {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update () {
-		if(nextSceneName != null && dialogManager.IsLastDialog && dialogText.IsChangingSceneDialog)
+    public void NextScene() {
+		if(nextSceneName != null)
         {
             GameObject music = GameObject.FindGameObjectWithTag("MusicPlayer");
             if (music != null)

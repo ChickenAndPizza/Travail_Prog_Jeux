@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: DialogFinScene1
   m_EditorClassIdentifier: 
   scriptableText: "Test de dialogue de fin sc\xE8ne 1"
-  nextDialog: {fileID: 0}
+  nextDialog: {fileID: 11400000, guid: 8ab98c5f76d37944a85d9b79e3a9f3ca, type: 2}
   IsChangingSceneDialog: 1

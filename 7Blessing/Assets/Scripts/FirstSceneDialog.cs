@@ -16,7 +16,7 @@ public class FirstSceneDialog : MonoBehaviour {
 
     private void Update()
     {
-        if(nextSceneName != null && dialogManager.IsLastDialog)
+        if(nextSceneName != null && dialogText.IsChangingSceneDialog)
         {
             SceneManager.LoadScene(nextSceneName);
         }
