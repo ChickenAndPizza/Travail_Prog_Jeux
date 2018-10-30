@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720f6889561ad064583407d6b1caf8ed, type: 3}
+  m_Name: Health Potion
+  m_EditorClassIdentifier: 
+  itemName: Health Potion
+  ID: 1
+  icon: {fileID: 21300000, guid: da8a5070f1ec3814fbcd6fb8bc092e0e, type: 3}
+  m_object: {fileID: 1293541258345110, guid: 92bab930ebeef9b43a9b71a5a8fde801, type: 2}
+  isStackable: 1
+  maxStackNumber: 5
+  description: "\xC0 boire pour r\xE9cup\xE9rer de la vie"
+  variety: 0
+  rarity: 1
+  buy_Price: []
+  sell_Price: []
+  clipOnUse: {fileID: 0}
+  playClipTimes: 0
+  coolDown: 5
+  consumableItemType: 0
+  consumableItemAttributes: []
+  useOnPickUp: 0
+  CDAllThisWhenUse: 0
+  CDAllConsumbleWhenUse: 0
+  equipmentPart: 0
+  equipmentItemAttributes: []
