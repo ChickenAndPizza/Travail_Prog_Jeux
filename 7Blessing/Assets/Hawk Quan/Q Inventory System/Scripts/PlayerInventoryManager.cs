@@ -373,7 +373,7 @@ namespace QInventory
             float tempTotalCurrencyValue = totalCurrencyValue;
             foreach (PlayerCurrency m_PlayerCurrency in playerCurrencies)
             {
-                m_PlayerCurrency.amount = ((int)tempTotalCurrencyValue / (int)m_PlayerCurrency.currency.exchangeRate);
+                m_PlayerCurrency.amount = 10; // = ((int)tempTotalCurrencyValue / (int)m_PlayerCurrency.currency.exchangeRate);
                 tempTotalCurrencyValue -= m_PlayerCurrency.amount * m_PlayerCurrency.currency.exchangeRate;
             }
         }

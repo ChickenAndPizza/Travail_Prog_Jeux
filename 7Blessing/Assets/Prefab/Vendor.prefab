@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590784063314932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.88, y: -2.83, z: 0}
+  m_LocalPosition: {x: -5.2399826, y: -2.3562558, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   itemsToSell:
   - itemToSell: {fileID: 11400000, guid: ef8b0244857147342a072b201f332db4, type: 2}
     moveAfterPurchase: 0
-    useDefaultPrice: 1
+    useDefaultPrice: 0
     isMoved: 0
     prices: []
   openDistance: 0.66
