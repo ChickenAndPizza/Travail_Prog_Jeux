@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player_Move_Prot : MonoBehaviour {
 
-    public int playerSpeed = 10;
-    public int playerJumpPower = 7;
+    private int playerSpeed = 10;
+    private int playerJumpPower = 7;
     public float moveX = 0;
     public bool grounded = false;
     public bool facingLeft = false;
@@ -27,8 +27,10 @@ public class Player_Move_Prot : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
         }
-        mAnimator = GetComponent<Animator>();
         mPlayerBody = GetComponent<Rigidbody2D>();
+        playerSpeed = GetComponent<PlayerStats>().speed;
+        playerJumpPower = GetComponent<PlayerStats>().jumpPower;
+        mAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,7 +77,7 @@ public class Player_Move_Prot : MonoBehaviour {
             moveX = 0.0f;
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        mAnimator.SetFloat("VelocityY", gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        mAnimator.SetFloat("VelocityY", mPlayerBody.velocity.y);
     }
 
     bool checkRight()
