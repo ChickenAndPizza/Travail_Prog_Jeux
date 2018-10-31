@@ -164,20 +164,24 @@ public class Player_Move_Prot : MonoBehaviour {
                 Vector2 direction = new Vector2();
                 if (facingLeft == true)
                 {
-                    direction = Vector2.left;
+                    direction = new Vector2(-.5f,0);
                 }
                 else
                 {
-                    direction = Vector2.right;
+                    direction = new Vector2(0.5f,0);
                 }
 
                 ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
                 RaycastHit2D[] interactionHit = new RaycastHit2D[16];
-                int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, direction, contactFilter2DInteraction, interactionHit);
+                int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, direction, contactFilter2DInteraction, interactionHit, .5f);
                 List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
                 if (hitBufferListInteraction.Count > 0)
                 {
-                    hitBufferListInteraction[1].transform.gameObject.GetComponent<Interaction>().Interact();
+                    foreach(var truc in hitBufferListInteraction)
+                    {
+                        print(truc.transform.gameObject);
+                    }
+                    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
                 }
             }
         }

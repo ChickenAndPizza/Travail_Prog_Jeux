@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212162888668842370}
   - component: {fileID: 61983053628112494}
   - component: {fileID: 114952736189357064}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Storyteller
-  m_TagString: Storyteller
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100359706261368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.632, y: -2.737, z: 0.18182893}
+  m_LocalPosition: {x: -1.8447254, y: -2.6886919, z: 0.18182893}
   m_LocalScale: {x: 1.5636001, y: 1.5636001, z: 1.5636001}
   m_Children: []
   m_Father: {fileID: 0}
