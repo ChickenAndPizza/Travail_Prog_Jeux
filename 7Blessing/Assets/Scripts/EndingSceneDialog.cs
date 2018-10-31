@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndingSceneDialog : MonoBehaviour {
+public class EndingSceneDialog : Interaction {
     DialogManager dialogManager;
     [SerializeField] DialogText dialogText;
     [SerializeField] string nextSceneName;
@@ -11,7 +11,7 @@ public class EndingSceneDialog : MonoBehaviour {
     [SerializeField] AudioClip nextSceneSound;
 
     private AudioSource audioSource;
-    public void Interact()
+    public override void Interact()
     {
         audioSource.PlayOneShot(endingSound);
         dialogManager.StartDialog(dialogText);
@@ -23,9 +23,8 @@ public class EndingSceneDialog : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update () {
-		if(nextSceneName != null && dialogManager.IsLastDialog)
+    public void NextScene() {
+		if(nextSceneName != null)
         {
             GameObject music = GameObject.FindGameObjectWithTag("MusicPlayer");
             if (music != null)
