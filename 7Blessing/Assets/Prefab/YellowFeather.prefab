@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82480072779628468}
   m_Layer: 0
   m_Name: YellowFeather
-  m_TagString: Untagged
+  m_TagString: YellowFeather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
