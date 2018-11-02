@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 0}
+  shakeAmount: 0.1
+  shakeLength: 0.1
 --- !u!114 &114629180290498456
 MonoBehaviour:
   m_ObjectHideFlags: 1
