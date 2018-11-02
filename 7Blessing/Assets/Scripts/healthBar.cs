@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Image currentHealthBar;
 
-    public float currentHitPoints = 100;
+    public float currentHitPoints;
     private float maxHitPoints = 100;
 
     private void Start()
@@ -17,6 +17,7 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
+        currentHitPoints = GetComponentInParent<PlayerStats>().health;
         UpdateHealthBar();
     }
 
@@ -48,6 +49,7 @@ public class HealthBar : MonoBehaviour
         {
             currentHitPoints = 100;
         }
+        GetComponentInParent<PlayerStats>().health = currentHitPoints;
     }
 
     public void TakeDamage(float dmg)
@@ -57,6 +59,7 @@ public class HealthBar : MonoBehaviour
         {
             currentHitPoints = 0;
         }
+        GetComponentInParent<PlayerStats>().health = currentHitPoints;
     }
 
 }
