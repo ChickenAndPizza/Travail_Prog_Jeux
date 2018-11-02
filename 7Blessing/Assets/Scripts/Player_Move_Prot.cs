@@ -20,6 +20,8 @@ public class Player_Move_Prot : MonoBehaviour {
     public bool eIsPressed = false;
     private Animator mAnimator;
     private Rigidbody2D mPlayerBody;
+    private AudioSource mAudioSource;
+    public AudioClip groundedSound;
     // Use this for initialization
     void Start()
     {
@@ -28,6 +30,7 @@ public class Player_Move_Prot : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
         mPlayerBody = GetComponent<Rigidbody2D>();
+        mAudioSource = GetComponent<AudioSource>();
         mAnimator = GetComponent<Animator>();
     }
 
@@ -139,6 +142,7 @@ public class Player_Move_Prot : MonoBehaviour {
         if (other.gameObject.CompareTag("Ground"))
         {
             jumping = false;
+            mAudioSource.PlayOneShot(groundedSound);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
@@ -177,10 +181,6 @@ public class Player_Move_Prot : MonoBehaviour {
                 List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
                 if (hitBufferListInteraction.Count > 0)
                 {
-                    foreach(var truc in hitBufferListInteraction)
-                    {
-                        print(truc.transform.gameObject);
-                    }
                     hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
                 }
             }

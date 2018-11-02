@@ -7,4 +7,9 @@ public class AttackGround : MonoBehaviour , Attackable {
     {
 
     }
+
+    public void Heal(int healPower)
+    {
+       
+    }
 }

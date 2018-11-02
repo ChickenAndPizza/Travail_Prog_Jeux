@@ -13,9 +13,10 @@ public class AttackWall : MonoBehaviour, Attackable {
     {
         audioSource.PlayOneShot(audioClip);
     }
+    
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    public void Heal(int healPower)
+    {
+        
+    }
 }

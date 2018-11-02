@@ -90,4 +90,9 @@ public class PurpleEnemy : Enemies, Attackable
     {
         Destroy(gameObject);
     }
+
+    public void Heal(int healPower)
+    {
+        health += healPower;
+    }
 }

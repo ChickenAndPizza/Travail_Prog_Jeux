@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : MonoBehaviour, Attackable
 {
     public Image currentHealthBar;
 
-    public float currentHitPoints;
+    private float currentHitPoints;
     private float maxHitPoints = 100;
 
     private void Start()
@@ -42,19 +42,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void HealDamage(float heal)
+    public void Attacked(int damage)
     {
-        currentHitPoints += heal;
-        if (currentHitPoints > maxHitPoints)
-        {
-            currentHitPoints = 100;
-        }
-        GetComponentInParent<PlayerStats>().health = currentHitPoints;
-    }
-
-    public void TakeDamage(float dmg)
-    {
-        currentHitPoints -= dmg;
+        currentHitPoints -= damage;
         if (currentHitPoints < 0)
         {
             currentHitPoints = 0;
@@ -62,4 +52,13 @@ public class HealthBar : MonoBehaviour
         GetComponentInParent<PlayerStats>().health = currentHitPoints;
     }
 
+    public void Heal(int healPower)
+    {
+        currentHitPoints += healPower;
+        if (currentHitPoints > maxHitPoints)
+        {
+            currentHitPoints = 100;
+        }
+        GetComponentInParent<PlayerStats>().health = currentHitPoints;
+    }
 }

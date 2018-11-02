@@ -53,7 +53,7 @@ public class PowerUp : MonoBehaviour {
     IEnumerator PickUpRedPotion(Collider2D player)
     {
         HealthBar healthBar = player.GetComponent<HealthBar>();
-        healthBar.HealDamage(healingPower);
+        healthBar.Heal((int)healingPower);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(1);

@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface Attackable  {
     void Attacked(int damage);
+    void Heal(int healPower);
 }

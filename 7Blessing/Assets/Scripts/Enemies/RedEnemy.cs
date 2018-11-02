@@ -60,4 +60,9 @@ public class RedEnemy : Enemies, Attackable
             DestroyMonster();
         }
     }
+
+    public void Heal(int healPower)
+    {
+        health += healPower;
+    }
 }

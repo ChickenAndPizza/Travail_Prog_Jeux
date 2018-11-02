@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour, Attackable{
+public class PlayerAttack : MonoBehaviour{
 
     private float timeBetweenAttack = 0;
     private PlayerStats playerStats;
@@ -71,14 +71,5 @@ public class PlayerAttack : MonoBehaviour, Attackable{
         contactFilter2DAttack.SetLayerMask(Physics2D.GetLayerCollisionMask(LayerMask.NameToLayer(LayerName)));
         contactFilter2DAttack.useLayerMask = true;
         return contactFilter2DAttack;
-    }
-
-    public void Attacked(int damage)
-    {
-        playerStats.health -= damage;
-        if(playerStats.health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
