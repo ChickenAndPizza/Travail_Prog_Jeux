@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669610234254762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0659933, y: -1.8549103, z: 0.046081647}
+  m_LocalPosition: {x: 6.5301046, y: -1.8554832, z: 0.046081647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4214443580405738}
@@ -130,7 +130,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -249,6 +249,8 @@ MonoBehaviour:
   dammageSound: {fileID: 8300000, guid: 369837d40ddcfd94cbbc9e03f7911525, type: 3}
   movementVector: {x: 2, y: 10}
   period: 10
+  bloodEffect: {fileID: 198385077737661276, guid: d7385c1a9050c4f42b19e671814b6dac,
+    type: 2}
   movementFactor: 0
 --- !u!212 &212570408645376442
 SpriteRenderer:

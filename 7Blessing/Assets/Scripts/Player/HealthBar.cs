@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour, Attackable
 {
@@ -9,10 +10,15 @@ public class HealthBar : MonoBehaviour, Attackable
 
     private float currentHitPoints;
     private float maxHitPoints = 100;
+    public float shakeAmount = 0.1f;
+    public float shakeLength = 0.1f;
+    private CameraShake camShake;
 
     private void Start()
     {
         UpdateHealthBar();
+        camShake = GetComponent<CameraShake>();
+
     }
 
     private void Update()
@@ -50,6 +56,11 @@ public class HealthBar : MonoBehaviour, Attackable
             currentHitPoints = 0;
         }
         GetComponentInParent<PlayerStats>().health = currentHitPoints;
+        camShake.Shake(shakeAmount,shakeLength);
+        if(currentHitPoints <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void Heal(int healPower)

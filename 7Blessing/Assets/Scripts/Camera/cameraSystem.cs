@@ -10,8 +10,20 @@ public class cameraSystem : MonoBehaviour {
     public float xMax;
     public float yMin;
     public float yMax;
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        int countOfCamera = FindObjectsOfType<cameraSystem>().Length;
+        if (countOfCamera > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    // Use this for initialization
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 	

@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 70569974108200916}
   - component: {fileID: 114629180290498456}
   - component: {fileID: 82479333988155046}
+  - component: {fileID: 114064704506582252}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -122,7 +123,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -224,6 +225,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114064704506582252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148479626382388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddad53462396e5541b15d5345997588b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealthBar: {fileID: 0}
 --- !u!114 &114629180290498456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,10 +290,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  endingLayer:
-    serializedVersion: 2
-    m_Bits: 512
   eIsPressed: 0
+  groundedSound: {fileID: 8300000, guid: 69e167a53ccd2c742be35e6f3959a7c0, type: 3}
 --- !u!212 &212788740247180034
 SpriteRenderer:
   m_ObjectHideFlags: 1

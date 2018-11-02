@@ -388,7 +388,7 @@ namespace QInventory
                 //这里将来要写传递使用信息，进行相应属性操作
                 Q_GameMaster.Instance.inventoryManager.playerInventoryManager.ChangePlayerAttributeByItemAttribute(item.consumableItemAttributes);
                 amount--;
-                //GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>().HealDamage(item.consumableItemAttributes[0].value);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>().Heal((int)item.consumableItemAttributes[0].value);
                 if (amount > 0)
                 {
                     if (item.coolDown > 0)

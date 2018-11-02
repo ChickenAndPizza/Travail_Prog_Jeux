@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -9,6 +11,7 @@ public class RedEnemy : Enemies, Attackable
     [SerializeField] AudioClip dammageSound;
     [SerializeField] Vector2 movementVector = new Vector2(10f, 10f);
     [SerializeField] float period = 2f;
+    [SerializeField] ParticleSystem bloodEffect;
 
     [Range(0, 1)]
     [SerializeField]
@@ -53,12 +56,20 @@ public class RedEnemy : Enemies, Attackable
     public void Attacked(int damage)
     {
         audioSource.PlayOneShot(dammageSound);
-        print("red");
+        Instantiate(bloodEffect, gameObject.transform);
         health -= damage;
         if(health <= 0)
         {
-            DestroyMonster();
+            StartCoroutine(Death());
+            
         }
+    }
+
+    IEnumerator Death()
+    {
+        this.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        DestroyMonster();
     }
 
     public void Heal(int healPower)

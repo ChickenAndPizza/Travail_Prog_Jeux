@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198385077737661276}
   - component: {fileID: 199165048316523858}
   m_Layer: 0
-  m_Name: BloodEffect
+  m_Name: BloodEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +226,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
-      maxColor: {r: 1, g: 0.4764151, b: 0.5796325, a: 1}
+      minColor: {r: 0.8867924, g: 0.054378804, b: 0.81487423, a: 1}
+      maxColor: {r: 0.9178551, g: 0.47450984, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

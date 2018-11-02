@@ -16,19 +16,26 @@ public class Player_Move_Prot : MonoBehaviour {
     private bool controlAreEnable = true;
     public Transform GroundCheck;
     public LayerMask groundLayer;
-    public LayerMask endingLayer;
     public bool eIsPressed = false;
     private Animator mAnimator;
     private Rigidbody2D mPlayerBody;
     private AudioSource mAudioSource;
     public AudioClip groundedSound;
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
-        if(SceneManager.GetActiveScene().name != "FirstScene")
+        int numberOfPlayer = FindObjectsOfType<Player_Move_Prot>().Length;
+        if (numberOfPlayer > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+    // Use this for initialization
+    void Start()
+    {
         mPlayerBody = GetComponent<Rigidbody2D>();
         mAudioSource = GetComponent<AudioSource>();
         mAnimator = GetComponent<Animator>();
@@ -50,12 +57,12 @@ public class Player_Move_Prot : MonoBehaviour {
             {
                 running = true;
                 MovePlayer();
-                ManageInteraction();
             }
             else
             {
                 running = false;
             }
+            ManageInteraction();
 
         }
 

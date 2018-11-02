@@ -19,6 +19,5 @@ public class StartingPosition : MonoBehaviour {
         movement = player.GetComponent<Player_Move_Prot>();
         movement.GroundCheck = GroundCheck;
         movement.groundLayer = groundLayer;
-        movement.endingLayer = endingLayer;
     }
 }

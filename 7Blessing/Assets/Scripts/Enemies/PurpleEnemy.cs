@@ -8,6 +8,7 @@ public class PurpleEnemy : Enemies, Attackable
     [SerializeField] AudioClip dammageSound;
     [SerializeField] Vector2 movementVector = new Vector2(2f, 10f);
     [SerializeField] float period = 10f;
+    [SerializeField] ParticleSystem bloodEffect;
 
     [Range(0, 1)]
     [SerializeField]
@@ -79,11 +80,20 @@ public class PurpleEnemy : Enemies, Attackable
     {
         audioSource.PlayOneShot(dammageSound);
         health -= damage;
+        Instantiate(bloodEffect, gameObject.transform);
         if (health <= 0)
         {
-            DestroyMonster();
+            StartCoroutine(Death());
         }
-        
+
+    }
+
+    IEnumerator Death()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(.5f);
+        GetComponent<SpriteRenderer>().enabled = false;
+        DestroyMonster();
     }
 
     private void DestroyMonster()
