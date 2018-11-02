@@ -164,21 +164,24 @@ public class Player_Move_Prot : MonoBehaviour {
                 Vector2 direction = new Vector2();
                 if (facingLeft == true)
                 {
-                    direction = Vector2.left;
+                    direction = new Vector2(-.5f,0);
                 }
                 else
                 {
-                    direction = Vector2.right;
+                    direction = new Vector2(0.5f,0);
                 }
 
-                if(Physics2D.Raycast(transform.position, direction, 0.5f, endingLayer))
+                ContactFilter2D contactFilter2DInteraction = BuildContactFilter2DForLayer("Interaction");
+                RaycastHit2D[] interactionHit = new RaycastHit2D[16];
+                int interactionCollisionHitCount = Physics2D.Raycast(gameObject.transform.position, direction, contactFilter2DInteraction, interactionHit, .5f);
+                List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
+                if (hitBufferListInteraction.Count > 0)
                 {
-                    GameObject endingScene = GameObject.FindWithTag("EndingScene");
-                    if (endingScene != null)
+                    foreach(var truc in hitBufferListInteraction)
                     {
-                        EndingSceneDialog interact = endingScene.GetComponent<EndingSceneDialog>();
-                        interact.Interact();
+                        print(truc.transform.gameObject);
                     }
+                    hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
                 }
             }
         }
@@ -186,5 +189,26 @@ public class Player_Move_Prot : MonoBehaviour {
         {
             eIsPressed = false;
         }
+    }
+
+
+    private ContactFilter2D BuildContactFilter2DForLayer(string LayerName)
+    {
+        ContactFilter2D contactFilter2DInteraction = new ContactFilter2D();
+        contactFilter2DInteraction.useTriggers = false;
+        contactFilter2DInteraction.SetLayerMask(Physics2D.GetLayerCollisionMask(LayerMask.NameToLayer(LayerName)));
+        contactFilter2DInteraction.useLayerMask = true;
+        return contactFilter2DInteraction;
+    }
+
+    private List<RaycastHit2D> BufferArrayHitToList(RaycastHit2D[] hitBuffer, int count)
+    {
+        List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(count);
+        hitBufferList.Clear();
+        for (int i = 0; i < count; i++)
+        {
+            hitBufferList.Add(hitBuffer[i]);
+        }
+        return hitBufferList;
     }
 }

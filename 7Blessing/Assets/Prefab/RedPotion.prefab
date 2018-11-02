@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82767641757099328}
   m_Layer: 8
   m_Name: RedPotion
-  m_TagString: Untagged
+  m_TagString: RedPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

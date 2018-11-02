@@ -23,10 +23,17 @@ public class HealthBar : MonoBehaviour
     private void UpdateHealthBar()
     {
         float ratio = currentHitPoints / maxHitPoints;
-        currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
+        if (currentHealthBar != null)
+        {
+            currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
+        }
         if (ratio < 0.25f)
         {
             currentHealthBar.color = Color.red;
+        }
+        else if (ratio < 0.5f && ratio >=.25f)
+        {
+            currentHealthBar.color = Color.yellow;
         }
         else
         {
