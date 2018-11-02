@@ -22,10 +22,10 @@ TagManager:
   - 
   - 
   - Ground
-  - Ending
-  - 
-  - 
-  - 
+  - Attackable
+  - Interaction
+  - Ennemies
+  - Wall
   - 
   - 
   - 

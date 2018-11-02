@@ -8,8 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: DialogFinScene1
+  m_Script: {fileID: 11500000, guid: 40cd2cf3157019f4dbe4429c5e79b3df, type: 3}
+  m_Name: coin
   m_EditorClassIdentifier: 
-  scriptableText: "Test de dialogue de fin sc\xE8ne 1"
-  nextDialog: {fileID: 0}
+  currencyName: coin
+  icon: {fileID: 0}
+  exchangeRate: 0.000001
