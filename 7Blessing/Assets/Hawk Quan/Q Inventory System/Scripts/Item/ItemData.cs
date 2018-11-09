@@ -198,6 +198,7 @@ namespace QInventory
         public void BuyItem()
         {
             float totalPrice = amountToBuy * realPrice; //计算总价值
+            //print("total price " + totalPrice);
 
             if (totalPrice > Q_GameMaster.Instance.inventoryManager.playerInventoryManager.totalCurrencyValue)//检验钱够不够
             {
@@ -227,7 +228,7 @@ namespace QInventory
                 //减去货币,按总价值从最高位开始算
                 foreach (PlayerCurrency m_PlayerCurrency in Q_GameMaster.Instance.inventoryManager.playerInventoryManager.playerCurrencies)
                 {
-                    m_PlayerCurrency.amount = 10; // = ((int)tempTotalCurrencyValue / (int)m_PlayerCurrency.currency.exchangeRate);
+                    m_PlayerCurrency.amount = ((int)tempTotalCurrencyValue / (int)m_PlayerCurrency.currency.exchangeRate);
                     //Debug.Log(m_PlayerCurrency.currency.currencyName + m_PlayerCurrency.amount);
                     tempTotalCurrencyValue -= m_PlayerCurrency.amount * m_PlayerCurrency.currency.exchangeRate;
                 }
@@ -388,6 +389,7 @@ namespace QInventory
                 //这里将来要写传递使用信息，进行相应属性操作
                 Q_GameMaster.Instance.inventoryManager.playerInventoryManager.ChangePlayerAttributeByItemAttribute(item.consumableItemAttributes);
                 amount--;
+                print(item);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>().Heal((int)item.consumableItemAttributes[0].value);
                 if (amount > 0)
                 {

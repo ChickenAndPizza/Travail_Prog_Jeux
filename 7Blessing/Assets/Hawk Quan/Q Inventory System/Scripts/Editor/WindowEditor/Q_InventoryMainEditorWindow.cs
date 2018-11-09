@@ -407,14 +407,14 @@ public class Q_InventoryMainEditorWindow : Q_InventoryEmptyEditorWindow
         {
             string relPath = absPath.Substring(Application.dataPath.Length - "Assets".Length);
             inventoryItemList = AssetDatabase.LoadAssetAtPath(relPath, typeof(ItemList)) as ItemList;
-            if (inventoryItemList.itemList == null)
-                inventoryItemList.itemList = new List<Item>();
-            if (inventoryItemList.bluePrints == null)
-                inventoryItemList.bluePrints = new List<CraftingBluePrint>();
-            if (inventoryItemList.currencies == null)
-                inventoryItemList.currencies = new List<Currency>();
-            if (inventoryItemList.attributes == null)
-                inventoryItemList.attributes = new List<ItemAttribute>();
+            //if (inventoryItemList.itemList == null)
+            //inventoryItemList.itemList = new List<Item>();
+            //if (inventoryItemList.bluePrints == null)
+            //    inventoryItemList.bluePrints = new List<CraftingBluePrint>();
+            //if (inventoryItemList.currencies == null)
+            //    inventoryItemList.currencies = new List<Currency>();
+            //if (inventoryItemList.attributes == null)
+            //    inventoryItemList.attributes = new List<ItemAttribute>();
 
             if (inventoryItemList)
             {
