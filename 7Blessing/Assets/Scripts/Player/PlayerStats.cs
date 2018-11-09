@@ -8,4 +8,5 @@ public class PlayerStats : MonoBehaviour {
     public int attack = 20;
     public int jumpPower = 7;
     public int speed = 10;
+    public int lives = 3;
 }

@@ -33,18 +33,18 @@ public class HealthBar : MonoBehaviour, Attackable
         if (currentHealthBar != null)
         {
             currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
-        }
-        if (ratio < 0.25f)
-        {
-            currentHealthBar.color = Color.red;
-        }
-        else if (ratio < 0.5f && ratio >=.25f)
-        {
-            currentHealthBar.color = Color.yellow;
-        }
-        else
-        {
-            currentHealthBar.color = Color.green;
+            if (ratio < 0.25f)
+            {
+                currentHealthBar.color = Color.red;
+            }
+            else if (ratio < 0.5f && ratio >=.25f)
+            {
+                currentHealthBar.color = Color.yellow;
+            }
+            else
+            {
+                currentHealthBar.color = Color.green;
+            }
         }
     }
 
@@ -59,7 +59,22 @@ public class HealthBar : MonoBehaviour, Attackable
         camShake.Shake(shakeAmount,shakeLength);
         if(currentHitPoints <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GetComponentInParent<PlayerStats>().lives --;
+            if (GetComponentInParent<PlayerStats>().lives <= 0)
+            {
+                Object[] destroy = FindObjectsOfType<DestroyOnGameOver>();
+                foreach(DestroyOnGameOver mObject in destroy)
+                {
+                    mObject.DestroyGameObject();
+                }
+                    Destroy(gameObject);
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                GetComponentInParent<PlayerStats>().health = 100;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 

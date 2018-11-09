@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114629180290498456}
   - component: {fileID: 82479333988155046}
   - component: {fileID: 114064704506582252}
+  - component: {fileID: 114533490240152352}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -239,6 +240,17 @@ MonoBehaviour:
   currentHealthBar: {fileID: 0}
   shakeAmount: 0.1
   shakeLength: 0.1
+--- !u!114 &114533490240152352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148479626382388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873529738d8ab6642897d79a3340e7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114629180290498456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,6 +286,7 @@ MonoBehaviour:
   attack: 20
   jumpPower: 7
   speed: 6
+  lives: 3
 --- !u!114 &114992404026088234
 MonoBehaviour:
   m_ObjectHideFlags: 1
