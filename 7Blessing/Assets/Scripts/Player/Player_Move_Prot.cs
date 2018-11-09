@@ -12,6 +12,9 @@ public class Player_Move_Prot : MonoBehaviour {
     public bool grounded = false;
     public bool facingLeft = false;
     private bool jumping = false;
+    private bool doublejumpUnlocked = true;
+    public bool doubleJumping = false;
+    public bool jumpAxisReleased = true;
     private bool running = false;
     private bool controlAreEnable = true;
     public Transform GroundCheck;
@@ -47,10 +50,15 @@ public class Player_Move_Prot : MonoBehaviour {
         playerSpeed = GetComponent<PlayerStats>().speed;
         playerJumpPower = GetComponent<PlayerStats>().jumpPower;
         grounded = IsGrounded();
+
         if (controlAreEnable)
         {
-            if (Input.GetAxis("Jump")!= 0 && grounded)
+            if (Input.GetAxis("Jump")!= 0 && !doubleJumping && jumpAxisReleased)
             {
+                if(!grounded)
+                {
+                    doubleJumping = true;
+                }
                 Jump();
             }
             if(Input.GetAxis("Horizontal") != 0)
@@ -69,6 +77,14 @@ public class Player_Move_Prot : MonoBehaviour {
         mAnimator.SetBool("Grounded", grounded);
         mAnimator.SetBool("JumpingRight", jumping);
         mAnimator.SetBool("Running", running);
+        if (Input.GetAxis("Jump") == 0)
+        {
+            jumpAxisReleased = true;
+        }
+        else
+        {
+            jumpAxisReleased = false;
+        }
     }
 
     void MovePlayer()
@@ -124,6 +140,7 @@ public class Player_Move_Prot : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if(hit.collider != null)
         {
+            doubleJumping = false;
             return true;
         }
         return false;
