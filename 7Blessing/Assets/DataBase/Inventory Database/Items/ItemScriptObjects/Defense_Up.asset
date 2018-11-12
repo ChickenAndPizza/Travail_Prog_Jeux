@@ -9,17 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 720f6889561ad064583407d6b1caf8ed, type: 3}
-  m_Name: Attack_Up
+  m_Name: Defense_Up
   m_EditorClassIdentifier: 
-  itemName: Attack_Up
-  ID: 2
-  icon: {fileID: 21300022, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
-  m_object: {fileID: 1376495087304034, guid: 8615badb631a71641a32163e81211de9, type: 2}
+  itemName: Defense_Up
+  ID: 3
+  icon: {fileID: 21300030, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
+  m_object: {fileID: 1600507734634858, guid: 4291a985d883c1143b54eae8df87d532, type: 2}
   isStackable: 0
   maxStackNumber: 1
-  description: Augmente les dommages du joueur de 5!!
+  description: "Augmente ta d\xE9fense de 5 points avec ce magnifique bouclier!!"
   variety: 0
-  rarity: 2
+  rarity: 3
   buy_Price:
   - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
     amount: 100
