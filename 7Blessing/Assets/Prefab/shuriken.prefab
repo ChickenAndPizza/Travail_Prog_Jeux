@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212369692246937138}
   - component: {fileID: 61436409844166838}
   - component: {fileID: 114418590195546954}
+  - component: {fileID: 95170853919839638}
   m_Layer: 0
   m_Name: shuriken
   m_TagString: Untagged
@@ -51,7 +52,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -67,6 +68,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.76, y: 8.09}
   m_EdgeRadius: 0
+--- !u!95 &95170853919839638
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550480712207248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe830f96c66e25c45a987e0ad7a702ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114418590195546954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +100,7 @@ MonoBehaviour:
   shurikenLife: 1
   speed: 5
   shurikenDamage: 5
+  hit: {fileID: 8300000, guid: c3d3e055ecf8e5e42a4a9d612fdb6d8b, type: 3}
 --- !u!212 &212369692246937138
 SpriteRenderer:
   m_ObjectHideFlags: 1

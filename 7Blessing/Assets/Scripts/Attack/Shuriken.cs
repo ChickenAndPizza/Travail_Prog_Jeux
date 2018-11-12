@@ -6,6 +6,8 @@ public class Shuriken : MonoBehaviour {
     [SerializeField] float shurikenLife = 1;
     [SerializeField] float speed = 5;
     [SerializeField] int shurikenDamage = 5;
+    [SerializeField] AudioClip hit;
+    private AudioSource audioSource;
     private bool goingLeft;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,7 @@ public class Shuriken : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        audioSource.PlayOneShot(hit);
     }
 
     private void DestroyShuriken()
