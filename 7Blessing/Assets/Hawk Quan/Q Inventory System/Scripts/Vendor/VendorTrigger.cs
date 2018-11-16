@@ -119,6 +119,8 @@ namespace QInventory
         public void DeleteVendorItem(Item item)
         {
             itemsToSell.Remove(itemsToSell.Where(c => c.itemToSell == item).First());
+            RefreshItems();
+            OpenPanel();
         }
 
         //private void Reset()
@@ -136,7 +138,8 @@ namespace QInventory
 
         internal void RefreshItems()
         {
-            m_Panel.SetActive(false);
+
+            Q_GameMaster.Instance.inventoryManager.toolTip.Deactivate();
             OpenPanel();
         }
     }

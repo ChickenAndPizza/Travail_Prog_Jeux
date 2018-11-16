@@ -235,7 +235,7 @@ namespace QInventory
 
                 Q_GameMaster.Instance.inventoryManager.PlayMoneyChangeClip();
 
-                if ((item.name == "Attack_Up") || (item.name == "Defense_Up"))
+                if (item.haveToBeDrestoyFromVendorWhenBuy)
                 {
                     FindObjectOfType<VendorTrigger>().DeleteVendorItem(item);
 

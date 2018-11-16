@@ -16,6 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300030, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
   m_object: {fileID: 1600507734634858, guid: 4291a985d883c1143b54eae8df87d532, type: 2}
   isStackable: 0
+  haveToBeDrestoyFromVendorWhenBuy: 1
   maxStackNumber: 1
   description: "Augmente ta d\xE9fense de 5 points avec ce magnifique bouclier!!"
   variety: 0

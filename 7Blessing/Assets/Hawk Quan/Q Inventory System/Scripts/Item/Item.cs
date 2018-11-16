@@ -13,6 +13,7 @@ namespace QInventory
         public Sprite icon;
         public GameObject m_object;
         public bool isStackable = false;
+        public bool haveToBeDrestoyFromVendorWhenBuy = false;
         public int maxStackNumber = 1;
 
         [Header("Base Information")]

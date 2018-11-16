@@ -10449,27 +10449,27 @@ Prefab:
     - target: {fileID: 224301010969799016, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000018146698
+      value: 0.000015258787
       objectReference: {fileID: 0}
     - target: {fileID: 224668587628782912, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000012370884
+      value: -0.00001525879
       objectReference: {fileID: 0}
     - target: {fileID: 224765271446289128, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00003340549
+      value: 0.000030517576
       objectReference: {fileID: 0}
     - target: {fileID: 224814907299455808, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000018146698
+      value: 0.000015258787
       objectReference: {fileID: 0}
     - target: {fileID: 224324089531102514, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00003340549
+      value: 0.000030517576
       objectReference: {fileID: 0}
     - target: {fileID: 224721225089043654, guid: eb8fa11bc5577af4eb790cc46ac25628,
         type: 2}
@@ -10570,6 +10570,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525511738054974, guid: eb8fa11bc5577af4eb790cc46ac25628,
+        type: 2}
+      propertyPath: playerCurrencies.Array.data[0].amount
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8fa11bc5577af4eb790cc46ac25628, type: 2}
