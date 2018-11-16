@@ -13,6 +13,13 @@ TagManager:
   - RedPotion
   - GreenPotion
   - YellowFeather
+  - Vendor
+  - Inventory
+  - Equipment
+  - Storage
+  - Craft
+  - SkillBar
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -27,7 +34,7 @@ TagManager:
   - Interaction
   - Ennemies
   - Wall
-  - 
+  - Boss
   - 
   - 
   - 
