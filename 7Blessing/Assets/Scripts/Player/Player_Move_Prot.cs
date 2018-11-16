@@ -12,7 +12,7 @@ public class Player_Move_Prot : MonoBehaviour {
     public bool grounded = false;
     public bool facingLeft = false;
     private bool jumping = false;
-    private bool doublejumpUnlocked = true;
+    private bool doublejumpUnlocked = false;
     public bool doubleJumping = false;
     public bool jumpAxisReleased = true;
     private bool running = false;
@@ -42,6 +42,7 @@ public class Player_Move_Prot : MonoBehaviour {
         mPlayerBody = GetComponent<Rigidbody2D>();
         mAudioSource = GetComponent<AudioSource>();
         mAnimator = GetComponent<Animator>();
+        doublejumpUnlocked = GetComponentInParent<PlayerStats>().doubleJumpUnlocked;
     }
 
     // Update is called once per frame
@@ -57,6 +58,8 @@ public class Player_Move_Prot : MonoBehaviour {
             {
                 if(!grounded)
                 {
+                    jumping = false;
+                    mAnimator.SetBool("JumpingRight", jumping);
                     doubleJumping = true;
                 }
                 Jump();
