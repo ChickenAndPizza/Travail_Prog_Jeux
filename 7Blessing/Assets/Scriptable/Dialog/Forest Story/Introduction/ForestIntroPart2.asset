@@ -9,7 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: ForestPart2
+  m_Name: ForestIntroPart2
   m_EditorClassIdentifier: 
-  scriptableText: Test de suite de dialogue de niveau
-  nextDialog: {fileID: 11400000, guid: 5faf438c9416fb54b84f8832aae3edbe, type: 2}
+  scriptableText: "Utilisez les fl\xE8ches pour vous d\xE9placer, la barre d\u2019espacement
+    pour sauter et la touche \xAB E \xBB pour interagir avec les autres personnages."
+  nextDialog: {fileID: 11400000, guid: 9d8d8c155ad0b0048a15aef4f2fd5a8b, type: 2}
+  IsChangingSceneDialog: 0

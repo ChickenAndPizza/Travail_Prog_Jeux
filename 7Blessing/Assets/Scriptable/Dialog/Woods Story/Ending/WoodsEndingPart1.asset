@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: ForestPart3
+  m_Name: WoodsEndingPart1
   m_EditorClassIdentifier: 
-  scriptableText: Je ne sais pas pourquoi ce dialogue est ici
-  nextDialog: {fileID: 0}
+  scriptableText: "Beau travail. Vous avez conquis la for\xEAt enchant\xE9e avec succ\xE8s."
+  nextDialog: {fileID: 11400000, guid: 48617d65656ba00438368059800295f8, type: 2}
+  IsChangingSceneDialog: 0

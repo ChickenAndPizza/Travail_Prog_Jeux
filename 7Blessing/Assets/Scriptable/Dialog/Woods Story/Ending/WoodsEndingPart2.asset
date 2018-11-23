@@ -9,10 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: DialogFinSuite
+  m_Name: WoodsEndingPart2
   m_EditorClassIdentifier: 
-  scriptableText: 'Test de dialogue suite de fin
-
-'
-  nextDialog: {fileID: 0}
-  IsChangingSceneDialog: 1
+  scriptableText: "La deuxi\xE8me b\xE9n\xE9diction, incarn\xE9e dans l'esprit de
+    la for\xEAt, vous revient de droit."
+  nextDialog: {fileID: 11400000, guid: bfec9b7379fcc534eb187be320140ca1, type: 2}
+  IsChangingSceneDialog: 0
