@@ -6,8 +6,21 @@ public class PlayerStats : MonoBehaviour {
 
     public float health = 100;
     public int attack = 20;
-    public int jumpPower = 7;
+    public int jumpPower = 5;
     public int speed = 10;
-    public bool shurikenUnlocked = true;
-    public bool doubleJumpUnlocked = true;
+    public bool shurikenUnlocked = false;
+    public bool doubleJumpUnlocked = false;
+
+
+    public void UnlockNextPower()
+    {
+        if(!doubleJumpUnlocked)
+        {
+            doubleJumpUnlocked = true;
+        }
+        else if(!shurikenUnlocked)
+        {
+            shurikenUnlocked = true;
+        }
+    }
 }
