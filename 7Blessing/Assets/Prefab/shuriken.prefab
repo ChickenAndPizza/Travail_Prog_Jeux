@@ -52,7 +52,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   shurikenLife: 1
   speed: 5
   shurikenDamage: 5
-  hit: {fileID: 8300000, guid: c3d3e055ecf8e5e42a4a9d612fdb6d8b, type: 3}
+  direction: 0
 --- !u!212 &212369692246937138
 SpriteRenderer:
   m_ObjectHideFlags: 1

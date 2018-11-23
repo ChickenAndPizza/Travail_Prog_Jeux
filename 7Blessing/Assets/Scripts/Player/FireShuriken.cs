@@ -8,12 +8,13 @@ public class FireShuriken : MonoBehaviour {
     [SerializeField] float timeOut = 1;
     [SerializeField] GameObject shuriken;
     [SerializeField] GameObject emmiter;
-    [SerializeField] Animator playerAnim;
+    Animator playerAnim;
     [SerializeField] AudioClip attackSound;
     private float timeLastFired = 1;
     private int facingDirection = 0;
 	// Use this for initialization
 	void Start () {
+        playerAnim = GetComponentInParent<Animator>();
         audioSource = GetComponent<AudioSource>();
         isUnlocked = GetComponentInParent<PlayerStats>().shurikenUnlocked;
     }
@@ -30,7 +31,7 @@ public class FireShuriken : MonoBehaviour {
             facingDirection = 1;
         }
 
-		if(Input.GetAxis("Fire3") != 0 && timeLastFired > timeOut && isUnlocked)
+		if(Input.GetAxis("Fire3") != 0 && timeLastFired >= timeOut && isUnlocked)
         {
             GameObject shurikenObject = Instantiate(shuriken, emmiter.transform.position, emmiter.transform.rotation);
             shurikenObject.GetComponent<Shuriken>().direction = facingDirection;
