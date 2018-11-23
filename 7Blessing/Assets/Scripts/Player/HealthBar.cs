@@ -60,6 +60,8 @@ public class HealthBar : MonoBehaviour, Attackable
         if(currentHitPoints <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GetComponentInParent<PlayerStats>().health = maxHitPoints;
+
         }
     }
 

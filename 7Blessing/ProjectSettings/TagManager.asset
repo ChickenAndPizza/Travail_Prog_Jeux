@@ -19,6 +19,7 @@ TagManager:
   - Storage
   - Equipment
   - SkillBar
+  - CurrentHealth
   layers:
   - Default
   - TransparentFX

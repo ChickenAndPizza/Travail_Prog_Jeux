@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114541503268136472}
   m_Layer: 5
   m_Name: CurrentHealth
-  m_TagString: Untagged
+  m_TagString: CurrentHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

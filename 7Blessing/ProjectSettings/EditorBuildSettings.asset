@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Water Scene.unity
     guid: 3c93c284673afad49a6535e94786593d
+  - enabled: 1
+    path: Assets/Scenes/Sandboxes/Sandbox_Alice.unity
+    guid: 29aeb39c55889c6488a36c620726010d
   m_configObjects: {}
