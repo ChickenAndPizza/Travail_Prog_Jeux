@@ -20,6 +20,7 @@ TagManager:
   - Craft
   - SkillBar
   - Boss
+  - BossHead
   layers:
   - Default
   - TransparentFX
@@ -35,8 +36,8 @@ TagManager:
   - Ennemies
   - Wall
   - Boss
-  - 
-  - 
+  - BossHead
+  - BossBody
   - 
   - 
   - 

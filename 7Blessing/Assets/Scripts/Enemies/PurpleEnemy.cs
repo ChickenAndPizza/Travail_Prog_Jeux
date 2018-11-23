@@ -104,5 +104,9 @@ public class PurpleEnemy : Enemies, Attackable
     public void Heal(int healPower)
     {
         health += healPower;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 }

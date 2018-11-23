@@ -43,9 +43,18 @@ public class PlayerAttack : MonoBehaviour{
                 int numberOfCollisions = Physics2D.OverlapCircle(attackPos.position, attackRange, contactFilter2DAttack, listOfAttackable);
                 if(numberOfCollisions > 0)
                 {
-                    for(int cpt = 0; cpt < numberOfCollisions; cpt++)
+                    int numberOfBossAttack = 0;
+                    for (int cpt = 0; cpt < numberOfCollisions; cpt++)
                     {
-                        listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
+                        if (listOfAttackable[cpt].name == "Boss" && numberOfBossAttack < 1)
+                        {
+                            numberOfBossAttack++;
+                            listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
+                        }
+                        else
+                        {
+                            listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
+                        }
                     }
                 }
 

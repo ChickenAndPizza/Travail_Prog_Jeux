@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour, Attackable
     private void Start()
     {
         UpdateHealthBar();
-        camShake = GetComponent<CameraShake>();
+        camShake = GameObject.FindObjectOfType<CameraShake>().GetComponent<CameraShake>();
 
     }
 
