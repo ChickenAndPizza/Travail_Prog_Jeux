@@ -13,6 +13,13 @@ TagManager:
   - RedPotion
   - GreenPotion
   - YellowFeather
+  - Inventory
+  - Craft
+  - Vendor
+  - Storage
+  - Equipment
+  - SkillBar
+  - EndingMenu
   layers:
   - Default
   - TransparentFX

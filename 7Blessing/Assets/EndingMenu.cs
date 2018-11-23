@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class EndingMenu : MonoBehaviour {
 
+
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

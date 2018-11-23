@@ -25,7 +25,10 @@ public class DialogManager : MonoBehaviour {
     public void StartDialog(DialogText newDialog)
     {
         dialogIsInitiated = true;
-        player.GetComponent<Player_Move_Prot>().DisableControl();
+        if(player != null)
+        {
+            player.GetComponent<Player_Move_Prot>().DisableControl();
+        }
         currentDialog = newDialog;
         GameObject currentDialogObject = Instantiate(dialogPrefab, mainCanvas.transform);
         currentDialogDisplayer = currentDialogObject.GetComponent<DialogDisplayer>();
@@ -58,9 +61,22 @@ public class DialogManager : MonoBehaviour {
         {
             var endingDialog = GameObject.FindGameObjectWithTag("EndingScene").GetComponent<EndingSceneDialog>();
             if(endingDialog != null)
+            {
                 endingDialog.NextScene();
+            }
         }
-        player.GetComponent<Player_Move_Prot>().EnableControl();
+        else if (currentDialog.IsConclusionDialog)
+        {
+            var conclusion = GameObject.FindGameObjectWithTag("EndingScene").GetComponent<ConclusionDialog>();
+            if(conclusion != null)
+            {
+                conclusion.ActivateMenu();
+            }
+        }
+        if (player != null)
+        {
+            player.GetComponent<Player_Move_Prot>().EnableControl();
+        }
     }
 
     private bool ShouldProcessInput()
