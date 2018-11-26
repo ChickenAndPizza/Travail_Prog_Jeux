@@ -12,8 +12,8 @@ public class Player_Move_Prot : MonoBehaviour {
     public bool grounded = false;
     public bool facingLeft = false;
     private bool jumping = false;
-    private bool doublejumpUnlocked = false;
-    public bool doubleJumping = false;
+    private bool doubleJumpUnlocked = false;
+    public bool IsDoubleJumping = false;
     public bool jumpAxisReleased = true;
     private bool running = false;
     private bool controlAreEnable = true;
@@ -42,28 +42,35 @@ public class Player_Move_Prot : MonoBehaviour {
         mPlayerBody = GetComponent<Rigidbody2D>();
         mAudioSource = GetComponent<AudioSource>();
         mAnimator = GetComponent<Animator>();
-        doublejumpUnlocked = GetComponentInParent<PlayerStats>().doubleJumpUnlocked;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        doubleJumpUnlocked = GetComponentInParent<PlayerStats>().doubleJumpUnlocked;
         playerSpeed = GetComponent<PlayerStats>().speed;
         playerJumpPower = GetComponent<PlayerStats>().jumpPower;
         grounded = IsGrounded();
 
         if (controlAreEnable)
         {
-            if (Input.GetAxis("Jump")!= 0 && !doubleJumping && jumpAxisReleased)
+            if (Input.GetAxis("Jump")!= 0 && !IsDoubleJumping && jumpAxisReleased)
             {
-                if(!grounded)
+                if (grounded)
+                {
+                    Jump();
+                }
+                else if (doubleJumpUnlocked)
                 {
                     jumping = false;
                     mAnimator.SetBool("JumpingRight", jumping);
-                    doubleJumping = true;
+                    IsDoubleJumping = true;
+                    Jump();
                 }
-                Jump();
+               
             }
+
             if(Input.GetAxis("Horizontal") != 0)
             {
                 running = true;
@@ -143,7 +150,7 @@ public class Player_Move_Prot : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if(hit.collider != null)
         {
-            doubleJumping = false;
+            IsDoubleJumping = false;
             return true;
         }
         return false;
@@ -208,6 +215,10 @@ public class Player_Move_Prot : MonoBehaviour {
                 List<RaycastHit2D> hitBufferListInteraction = BufferArrayHitToList(interactionHit, interactionCollisionHitCount);
                 if (hitBufferListInteraction.Count > 0)
                 {
+                    if(hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().tag == "EndingScene")
+                    {
+                        GetComponentInParent<PlayerStats>().UnlockNextPower();
+                    }
                     hitBufferListInteraction[0].transform.gameObject.GetComponent<Interaction>().Interact();
                 }
             }

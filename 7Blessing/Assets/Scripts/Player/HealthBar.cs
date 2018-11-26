@@ -34,15 +34,15 @@ public class HealthBar : MonoBehaviour, Attackable
         {
             currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
         }
-        if (ratio < 0.25f)
+        if (ratio < 0.25f && currentHealthBar != null)
         {
             currentHealthBar.color = Color.red;
         }
-        else if (ratio < 0.5f && ratio >=.25f)
+        else if (ratio < 0.5f && ratio >=.25f && currentHealthBar != null)
         {
             currentHealthBar.color = Color.yellow;
         }
-        else
+        else if (currentHealthBar != null)
         {
             currentHealthBar.color = Color.green;
         }
