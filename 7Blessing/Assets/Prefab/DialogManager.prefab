@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114096215772467622}
   m_Layer: 0
   m_Name: DialogManager
-  m_TagString: Untagged
+  m_TagString: DialogManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,4 +54,3 @@ MonoBehaviour:
   dialogPrefab: {fileID: 1462101879867150, guid: 0759f3ed8c20c504882a4a0d441b7835,
     type: 2}
   mainCanvas: {fileID: 0}
-  IsLastDialog: 0

@@ -22,7 +22,16 @@ public class HealthBar : MonoBehaviour, Attackable
     }
 
     private void Update()
-    {
+    { 
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+        {
+            Image healthPicture = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
+            if (healthPicture != null)
+            {
+                currentHealthBar = healthPicture;
+            }
+        }
+       
         currentHitPoints = GetComponentInParent<PlayerStats>().health;
         UpdateHealthBar();
     }
@@ -34,15 +43,15 @@ public class HealthBar : MonoBehaviour, Attackable
         {
             currentHealthBar.rectTransform.localScale = new Vector2(ratio, 1);
         }
-        if (ratio < 0.25f)
+        if (ratio < 0.25f && currentHealthBar != null)
         {
             currentHealthBar.color = Color.red;
         }
-        else if (ratio < 0.5f && ratio >=.25f)
+        else if (ratio < 0.5f && ratio >=.25f && currentHealthBar != null)
         {
             currentHealthBar.color = Color.yellow;
         }
-        else
+        else if (currentHealthBar != null)
         {
             currentHealthBar.color = Color.green;
         }
@@ -50,6 +59,7 @@ public class HealthBar : MonoBehaviour, Attackable
 
     public void Attacked(int damage)
     {
+        damage -= GetComponentInParent<PlayerStats>().defense;
         currentHitPoints -= damage;
         if (currentHitPoints < 0)
         {
@@ -60,6 +70,9 @@ public class HealthBar : MonoBehaviour, Attackable
         if(currentHitPoints <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GetComponentInParent<PlayerStats>().health = maxHitPoints;
+
+
         }
     }
 
