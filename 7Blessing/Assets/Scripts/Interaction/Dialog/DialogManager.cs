@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour {
     [SerializeField] public GameObject dialogPrefab;
@@ -25,11 +26,15 @@ public class DialogManager : MonoBehaviour {
     public void StartDialog(DialogText newDialog)
     {
         dialogIsInitiated = true;
-        player.GetComponent<Player_Move_Prot>().DisableControl();
+        if(player != null)
+        {
+            player.GetComponent<Player_Move_Prot>().DisableControl();
+        }
         currentDialog = newDialog;
         GameObject currentDialogObject = Instantiate(dialogPrefab, mainCanvas.transform);
         currentDialogDisplayer = currentDialogObject.GetComponent<DialogDisplayer>();
         currentDialogDisplayer.SetDialogText(currentDialog.GetDialogText());
+        ValidAxisInUser();
     }
 
     private void ProcessInput()
@@ -40,6 +45,7 @@ public class DialogManager : MonoBehaviour {
             if (currentDialog.IsNextDialog())
             {
                 currentDialog = currentDialog.GetNextDialog();
+
                 currentDialogDisplayer.SetDialogText(currentDialog.GetDialogText());
             }
             else
@@ -57,10 +63,28 @@ public class DialogManager : MonoBehaviour {
         if(currentDialog.IsChangingSceneDialog)
         {
             var endingDialog = GameObject.FindGameObjectWithTag("EndingScene").GetComponent<EndingSceneDialog>();
-            if(endingDialog != null)
+            var firstScene = GameObject.FindGameObjectWithTag("EndingScene").GetComponent<FirstSceneDialog>();
+            if (endingDialog != null)
+            {
                 endingDialog.NextScene();
+            }
+            else if (firstScene != null)
+            {
+                SceneManager.LoadScene(firstScene.nextSceneName);
+            }
         }
-        player.GetComponent<Player_Move_Prot>().EnableControl();
+        else if (currentDialog.IsConclusionDialog)
+        {
+            var conclusion = GameObject.FindGameObjectWithTag("EndingScene").GetComponent<ConclusionDialog>();
+            if(conclusion != null)
+            {
+                conclusion.ActivateMenu();
+            }
+        }
+        if (player != null)
+        {
+            player.GetComponent<Player_Move_Prot>().EnableControl();
+        }
     }
 
     private bool ShouldProcessInput()
