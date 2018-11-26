@@ -28,6 +28,9 @@ public class StartingPosition : MonoBehaviour {
         cameraShake = player.GetComponent<CameraShake>();
         cameraShake.mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         var healthBar = player.GetComponent<HealthBar>();
-        healthBar.currentHealthBar = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
+        if(healthBar != null)
+        {
+            healthBar.currentHealthBar = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
+        }
     }
 }

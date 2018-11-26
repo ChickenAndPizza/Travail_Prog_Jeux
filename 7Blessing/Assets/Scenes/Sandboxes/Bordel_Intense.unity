@@ -9345,7 +9345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 11400000, guid: 47f0f9d171408504fbd616fb40c355f3, type: 2}
-  nextSceneName: Conclusion
+  nextSceneName: Sandbox_Alice
   endingSound: {fileID: 8300000, guid: 2211ad35150474a4ab46a07528b17b92, type: 3}
   nextSceneSound: {fileID: 8300000, guid: 2b8d1198d6547d3439c5b6dfec5c476c, type: 3}
 --- !u!82 &1299256089
