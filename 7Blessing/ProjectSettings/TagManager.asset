@@ -13,6 +13,12 @@ TagManager:
   - RedPotion
   - GreenPotion
   - YellowFeather
+  - Inventory
+  - Craft
+  - Vendor
+  - Storage
+  - Equipment
+  - SkillBar
   layers:
   - Default
   - TransparentFX
@@ -70,4 +76,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1613868927
+    locked: 0
+  - name: DecorationFirstPlan
+    uniqueID: 2136077911
     locked: 0

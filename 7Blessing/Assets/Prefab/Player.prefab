@@ -28,7 +28,10 @@ GameObject:
   - component: {fileID: 114629180290498456}
   - component: {fileID: 82479333988155046}
   - component: {fileID: 114064704506582252}
-  - component: {fileID: 114533490240152352}
+  - component: {fileID: 114730282865326562}
+  - component: {fileID: 114559260723941160}
+  - component: {fileID: 114984624573089894}
+  - component: {fileID: 114326022978274852}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -238,9 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 0}
-  shakeAmount: 0.1
+  shakeAmount: 0.025
   shakeLength: 0.1
---- !u!114 &114533490240152352
+--- !u!114 &114326022978274852
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,9 +251,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148479626382388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 873529738d8ab6642897d79a3340e7f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a1c14cba7845db42a84fb623622d259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
+--- !u!114 &114559260723941160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148479626382388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c14cba7845db42a84fb623622d259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
 --- !u!114 &114629180290498456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,6 +287,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerAnim: {fileID: 95117836423218880}
+--- !u!114 &114730282865326562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148479626382388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30fb28cde9f2df2409ada6817b6f63f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeOut: 1
+  shuriken: {fileID: 1550480712207248, guid: b0264257746168f4c92bf5e93fcc2acc, type: 2}
+  emmiter: {fileID: 1359084962414304}
+  attackSound: {fileID: 8300000, guid: 01902a6e56cf30a4388c17e9391af045, type: 3}
 --- !u!114 &114779183235534376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,9 +315,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 20
-  jumpPower: 7
+  jumpPower: 5
   speed: 6
-  lives: 3
+  shurikenUnlocked: 0
+  doubleJumpUnlocked: 0
+--- !u!114 &114984624573089894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148479626382388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c14cba7845db42a84fb623622d259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
 --- !u!114 &114992404026088234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,6 +345,8 @@ MonoBehaviour:
   moveX: 0
   grounded: 1
   facingLeft: 0
+  doubleJumping: 0
+  jumpAxisReleased: 1
   GroundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
