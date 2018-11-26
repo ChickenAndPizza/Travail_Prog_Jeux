@@ -6,8 +6,8 @@ public class PowerUp : MonoBehaviour {
 
     private int superSpeed = 7;
     private int normalSpeed = 5;
-    private int superJumpPower = 10;
-    private int normalJumpPower = 7;
+    private int superJumpPower = 7;
+    private int normalJumpPower = 5;
     private float healingPower = 25;
     private float duration = 5f;
     private GameObject pcikUpEffect;
