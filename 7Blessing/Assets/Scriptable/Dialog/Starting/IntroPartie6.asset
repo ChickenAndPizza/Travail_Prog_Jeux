@@ -14,3 +14,4 @@ MonoBehaviour:
   scriptableText: Votre histoire commence maintenant.
   nextDialog: {fileID: 0}
   IsChangingSceneDialog: 1
+  IsConclusionDialog: 0

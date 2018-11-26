@@ -13,6 +13,8 @@ public class ConclusionDialog : MonoBehaviour {
     {
         dialogManager = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<DialogManager>();
         dialogManager.StartDialog(dialogText);
+        var player = GameObject.FindGameObjectWithTag("Player");
+        Destroy(player);
     }
 
     public void ActivateMenu()

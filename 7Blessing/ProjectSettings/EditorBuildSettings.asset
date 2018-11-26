@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Conclusion.unity
     guid: 2077522cf42aacf4ebb49d89461763ce
+  - enabled: 1
+    path: Assets/Scenes/Sandboxes/Bordel_Intense.unity
+    guid: 9f2dc8c9fb71c94419af7a17641302b3
   m_configObjects: {}
