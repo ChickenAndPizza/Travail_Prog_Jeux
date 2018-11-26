@@ -66,14 +66,14 @@ MonoBehaviour:
     isMoved: 0
     prices:
     - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
-      amount: 100
+      amount: 15
   - itemToSell: {fileID: 11400000, guid: ad462b2aa252161428aac83f11294c74, type: 2}
     moveAfterPurchase: 0
     useDefaultPrice: 1
     isMoved: 0
     prices:
     - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
-      amount: 100
+      amount: 15
   openDistance: 0.66
   panelAppearAbove: 0
   offset: {x: 0, y: 0, z: 0}

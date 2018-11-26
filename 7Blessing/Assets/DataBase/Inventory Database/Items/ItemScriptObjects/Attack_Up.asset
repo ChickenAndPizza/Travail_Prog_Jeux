@@ -16,14 +16,14 @@ MonoBehaviour:
   icon: {fileID: 21300022, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
   m_object: {fileID: 1376495087304034, guid: 8615badb631a71641a32163e81211de9, type: 2}
   isStackable: 0
-  haveToBeDrestoyFromVendorWhenBuy: 1
+  haveToBeDestroyFromVendorWhenBuy: 1
   maxStackNumber: 1
   description: Augmente les dommages du joueur de 5!!
   variety: 0
   rarity: 2
   buy_Price:
   - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
-    amount: 100
+    amount: 15
   sell_Price: []
   clipOnUse: {fileID: 0}
   playClipTimes: 0

@@ -297,10 +297,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDropCurrencyAmount:
   - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
-    amount: 0
+    amount: 5
   maxDropCurrencyAmount:
   - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
-    amount: 5
+    amount: 7
   itemsToDrop: []
 --- !u!114 &114333784317399382
 MonoBehaviour:

@@ -9,6 +9,8 @@ public class PlayerStats : MonoBehaviour {
     public int jumpPower = 5;
     public int speed = 10;
     public int defense = 0;
+    public bool shurikenUnlocked = false;
+    public bool doubleJumpUnlocked = false;
 
     public void AddAttackPower(int attackPowerToAdd)
     {
@@ -19,9 +21,6 @@ public class PlayerStats : MonoBehaviour {
     {
         defense += defenseToAdd;
     }
-    public bool shurikenUnlocked = false;
-    public bool doubleJumpUnlocked = false;
-
 
     public void UnlockNextPower()
     {
