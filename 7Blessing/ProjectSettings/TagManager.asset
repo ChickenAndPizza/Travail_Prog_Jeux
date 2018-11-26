@@ -78,3 +78,6 @@ TagManager:
   - name: Player
     uniqueID: 1613868927
     locked: 0
+  - name: Pit
+    uniqueID: 3130766935
+    locked: 0
