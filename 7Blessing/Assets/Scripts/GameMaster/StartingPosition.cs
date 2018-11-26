@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartingPosition : MonoBehaviour {
     [SerializeField] GameObject player;
@@ -15,7 +16,10 @@ public class StartingPosition : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = gameObject.transform.position;
         rigidBody2D = player.GetComponent<Rigidbody2D>();
-        rigidBody2D.bodyType = RigidbodyType2D.Dynamic;
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+        {
+            rigidBody2D.bodyType = RigidbodyType2D.Dynamic;
+        }
         movement = player.GetComponent<Player_Move_Prot>();
         movement.GroundCheck = GroundCheck;
         movement.groundLayer = groundLayer;

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
-  m_Name: IntroPartie6
+  m_Name: Final Dialog
   m_EditorClassIdentifier: 
-  scriptableText: Votre histoire commence maintenant.
+  scriptableText: Tu viens de finir le jeu, bravo!
   nextDialog: {fileID: 0}
-  IsChangingSceneDialog: 1
-  IsConclusionDialog: 0
+  IsChangingSceneDialog: 0
+  IsConclusionDialog: 1

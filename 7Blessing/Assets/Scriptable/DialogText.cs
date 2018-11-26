@@ -7,7 +7,7 @@ public class DialogText : ScriptableObject {
     [TextArea(10, 14)] [SerializeField] string scriptableText;
     [SerializeField] DialogText nextDialog;
     [SerializeField] public bool IsChangingSceneDialog = false;
-
+    [SerializeField] public bool IsConclusionDialog = false;
 
     public string GetDialogText()
     {
