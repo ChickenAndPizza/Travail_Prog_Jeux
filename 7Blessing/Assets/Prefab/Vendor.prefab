@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114835001140996170}
   m_Layer: 0
   m_Name: Vendor
-  m_TagString: Untagged
+  m_TagString: Vendor
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590784063314932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.2399826, y: -2.3562558, z: 0}
+  m_LocalPosition: {x: 29.23, y: -1.15, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,9 +55,25 @@ MonoBehaviour:
   itemsToSell:
   - itemToSell: {fileID: 11400000, guid: ef8b0244857147342a072b201f332db4, type: 2}
     moveAfterPurchase: 0
-    useDefaultPrice: 0
+    useDefaultPrice: 1
     isMoved: 0
-    prices: []
+    prices:
+    - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
+      amount: 5
+  - itemToSell: {fileID: 11400000, guid: 998a0b544c500ed429647539320e8c0d, type: 2}
+    moveAfterPurchase: 0
+    useDefaultPrice: 1
+    isMoved: 0
+    prices:
+    - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
+      amount: 100
+  - itemToSell: {fileID: 11400000, guid: ad462b2aa252161428aac83f11294c74, type: 2}
+    moveAfterPurchase: 0
+    useDefaultPrice: 1
+    isMoved: 0
+    prices:
+    - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
+      amount: 100
   openDistance: 0.66
   panelAppearAbove: 0
   offset: {x: 0, y: 0, z: 0}

@@ -66,7 +66,7 @@ namespace QInventory
                     for (int j = 0; j < price.childCount; j++)
                     {
                         priceText.Add(price.GetChild(j).GetChild(0).GetComponent<Text>());
-                        priceText.Remove(priceText.Last());
+                        //priceText.Remove(priceText.Last());
                     }
                     ItemData data = itemObj.GetComponent<ItemData>();//更新数据
 

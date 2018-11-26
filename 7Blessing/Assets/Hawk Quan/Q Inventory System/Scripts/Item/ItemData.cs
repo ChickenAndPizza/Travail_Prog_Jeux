@@ -235,6 +235,12 @@ namespace QInventory
 
                 Q_GameMaster.Instance.inventoryManager.PlayMoneyChangeClip();
 
+                if (item.haveToBeDrestoyFromVendorWhenBuy)
+                {
+                    FindObjectOfType<VendorTrigger>().DeleteVendorItem(item);
+
+                }
+
                 //如果是购买后消除的，则消除
                 if (moveAfterPurchase)
                 {
@@ -389,8 +395,19 @@ namespace QInventory
                 //这里将来要写传递使用信息，进行相应属性操作
                 Q_GameMaster.Instance.inventoryManager.playerInventoryManager.ChangePlayerAttributeByItemAttribute(item.consumableItemAttributes);
                 amount--;
-                print(item);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>().Heal((int)item.consumableItemAttributes[0].value);
+                print(item.name);
+                if(item.name == "Health Potion")
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>().Heal((int)item.consumableItemAttributes[0].value);
+                }
+                else if(item.name == "Attack_Up")
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().AddAttackPower((int)item.consumableItemAttributes[0].value);
+                }
+                else if(item.name == "Defense_Up")
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().AddDefense((int)item.consumableItemAttributes[0].value);
+                }
                 if (amount > 0)
                 {
                     if (item.coolDown > 0)
