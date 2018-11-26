@@ -182,7 +182,6 @@ namespace QInventory
             int amountLeft;
             int amountToAdd = amount;
             int temp = CheckItem(id);
-            Debug.Log(temp);
             if (newItem.isStackable && temp != -1)//如果item是可以重叠并且背包中已经有该物品了
             {
                 ItemData data = slots[temp].transform.GetChild(0).GetComponent<ItemData>();

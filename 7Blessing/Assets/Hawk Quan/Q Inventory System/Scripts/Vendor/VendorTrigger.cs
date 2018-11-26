@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -114,6 +116,13 @@ namespace QInventory
             }
         }
 
+        public void DeleteVendorItem(Item item)
+        {
+            itemsToSell.Remove(itemsToSell.Where(c => c.itemToSell == item).First());
+            RefreshItems();
+            OpenPanel();
+        }
+
         //private void Reset()
         //{
         //    InventorySaveData inventorySaveData = null;
@@ -125,6 +134,13 @@ namespace QInventory
         public int GetVendorID()
         {
             return vendorID;
+        }
+
+        internal void RefreshItems()
+        {
+
+            Q_GameMaster.Instance.inventoryManager.toolTip.Deactivate();
+            OpenPanel();
         }
     }
 }

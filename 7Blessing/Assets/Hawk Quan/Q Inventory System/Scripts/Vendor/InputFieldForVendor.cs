@@ -29,6 +29,7 @@ namespace QInventory
 
         public void AddAmount()
         {
+            print(m_ItemData.amountToBuy);
             m_ItemData.amountToBuy++;
             m_InputField.text = m_ItemData.amountToBuy.ToString();
         }

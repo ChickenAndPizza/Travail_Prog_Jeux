@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40cd2cf3157019f4dbe4429c5e79b3df, type: 3}
-  m_Name: coin
+  m_Name: golden_coin
   m_EditorClassIdentifier: 
-  currencyName: coin
-  icon: {fileID: 0}
-  exchangeRate: 0.000001
+  currencyName: golden_coin
+  icon: {fileID: 21300036, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
+  exchangeRate: 1

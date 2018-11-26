@@ -51,6 +51,7 @@ public class HealthBar : MonoBehaviour, Attackable
 
     public void Attacked(int damage)
     {
+        damage -= GetComponentInParent<PlayerStats>().defense;
         currentHitPoints -= damage;
         if (currentHitPoints < 0)
         {

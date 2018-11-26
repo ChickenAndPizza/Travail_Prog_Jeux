@@ -39,6 +39,7 @@ namespace QInventory
         void RandomCurrencyAmount()
         {
             List<Price> m_AmountToDrop = maxDropCurrencyAmount;
+
             if (minDropCurrencyAmount.Count == maxDropCurrencyAmount.Count)
             {
                 for (int i = 0; i < maxDropCurrencyAmount.Count; i++)
@@ -67,9 +68,12 @@ namespace QInventory
                 Debug.Log("Currency Setting Wrong");
                 return;
             }
-
-            GameObject CurrencyDropItem = Instantiate(Q_GameMaster.Instance.inventoryManager.m_CurrencyDropItem, transform.position, Quaternion.identity);
-            CurrencyDropItem.GetComponent<CurrencyData>().currencyAmounts = m_AmountToDrop;
+            print(m_AmountToDrop[0].amount);
+            if(m_AmountToDrop[0].amount > 0.999999f)
+            {
+                GameObject CurrencyDropItem = Instantiate(Q_GameMaster.Instance.inventoryManager.m_CurrencyDropItem, transform.position, Quaternion.identity);
+                CurrencyDropItem.GetComponent<CurrencyData>().currencyAmounts = m_AmountToDrop;
+            }
         }
 
 
