@@ -22,8 +22,16 @@ public class HealthBar : MonoBehaviour, Attackable
     }
 
     private void Update()
-    {
-        currentHealthBar = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
+    { 
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+        {
+            Image healthPicture = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
+            if (healthPicture != null)
+            {
+                currentHealthBar = healthPicture;
+            }
+        }
+       
         currentHitPoints = GetComponentInParent<PlayerStats>().health;
         UpdateHealthBar();
     }
