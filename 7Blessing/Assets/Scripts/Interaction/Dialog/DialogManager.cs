@@ -34,6 +34,7 @@ public class DialogManager : MonoBehaviour {
         GameObject currentDialogObject = Instantiate(dialogPrefab, mainCanvas.transform);
         currentDialogDisplayer = currentDialogObject.GetComponent<DialogDisplayer>();
         currentDialogDisplayer.SetDialogText(currentDialog.GetDialogText());
+        ValidAxisInUser();
     }
 
     private void ProcessInput()
@@ -44,6 +45,7 @@ public class DialogManager : MonoBehaviour {
             if (currentDialog.IsNextDialog())
             {
                 currentDialog = currentDialog.GetNextDialog();
+
                 currentDialogDisplayer.SetDialogText(currentDialog.GetDialogText());
             }
             else
