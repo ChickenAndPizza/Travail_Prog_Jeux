@@ -23,6 +23,7 @@ public class HealthBar : MonoBehaviour, Attackable
 
     private void Update()
     {
+        currentHealthBar = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
         currentHitPoints = GetComponentInParent<PlayerStats>().health;
         UpdateHealthBar();
     }
@@ -61,6 +62,7 @@ public class HealthBar : MonoBehaviour, Attackable
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             GetComponentInParent<PlayerStats>().health = maxHitPoints;
+
 
         }
     }

@@ -15,6 +15,7 @@ public class StartingPosition : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
+        print("test");
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = gameObject.transform.position;
         rigidBody2D = player.GetComponent<Rigidbody2D>();
@@ -27,10 +28,5 @@ public class StartingPosition : MonoBehaviour {
         movement.groundLayer = groundLayer;
         cameraShake = player.GetComponent<CameraShake>();
         cameraShake.mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        var healthBar = player.GetComponent<HealthBar>();
-        if(healthBar != null)
-        {
-            healthBar.currentHealthBar = GameObject.FindGameObjectWithTag("CurrentHealth").GetComponent<Image>();
-        }
     }
 }
