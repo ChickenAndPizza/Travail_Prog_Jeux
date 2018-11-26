@@ -46,14 +46,23 @@ public class PlayerAttack : MonoBehaviour{
                     int numberOfBossAttack = 0;
                     for (int cpt = 0; cpt < numberOfCollisions; cpt++)
                     {
-                        if (listOfAttackable[cpt].name == "Boss" && numberOfBossAttack < 1)
+                        if (listOfAttackable[cpt].name == "BossBody" && numberOfBossAttack < 1)
                         {
                             numberOfBossAttack++;
                             listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
                         }
                         else
                         {
-                            listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
+                    
+                            try
+                            {
+                                listOfAttackable[cpt].transform.gameObject.GetComponent<Attackable>().Attacked(playerStats.attack);
+                            }
+                            catch
+                            {
+                                print(listOfAttackable[cpt].name);
+                            }
+                           
                         }
                     }
                 }

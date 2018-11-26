@@ -50,4 +50,11 @@ public class Boss : Enemies, Attackable {
             health = maxHealth;
         }
     }
+
+    public void IntroFight()
+    {
+        Player_Move_Prot player = FindObjectOfType<Player_Move_Prot>();
+        mAnimator.SetTrigger("StartFight");
+        player.EnableControl();
+    }
 }
