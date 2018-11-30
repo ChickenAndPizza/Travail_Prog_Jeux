@@ -12,15 +12,15 @@ public class cameraSystem : MonoBehaviour {
     public float yMax;
     private void Awake()
     {
-        int countOfCamera = FindObjectsOfType<cameraSystem>().Length;
-        if (countOfCamera > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        //int countOfCamera = FindObjectsOfType<cameraSystem>().Length;
+        //if (countOfCamera > 1)
+        //{
+        //    Destroy(gameObject);
+        //}
+        //else
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //}
     }
     // Use this for initialization
     void Start () {

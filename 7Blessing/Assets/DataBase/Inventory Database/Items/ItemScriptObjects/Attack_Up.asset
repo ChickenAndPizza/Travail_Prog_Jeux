@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720f6889561ad064583407d6b1caf8ed, type: 3}
+  m_Name: Attack_Up
+  m_EditorClassIdentifier: 
+  itemName: Attack_Up
+  ID: 2
+  icon: {fileID: 21300022, guid: 9c2c642c47b2fc344ab143e21aedaca9, type: 3}
+  m_object: {fileID: 1376495087304034, guid: 8615badb631a71641a32163e81211de9, type: 2}
+  isStackable: 0
+  haveToBeDestroyFromVendorWhenBuy: 1
+  maxStackNumber: 1
+  description: Augmente les dommages du joueur de 5!!
+  variety: 0
+  rarity: 2
+  buy_Price:
+  - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
+    amount: 15
+  sell_Price: []
+  clipOnUse: {fileID: 0}
+  playClipTimes: 0
+  coolDown: 0
+  consumableItemType: 0
+  consumableItemAttributes:
+  - consumableItemAttribute: {fileID: 11400000, guid: 9247831b0896ffd439e6f8ef9d5150f8,
+      type: 2}
+    effectType: 2
+    value: 5
+  useOnPickUp: 1
+  CDAllThisWhenUse: 0
+  CDAllConsumbleWhenUse: 0
+  equipmentPart: 0
+  equipmentItemAttributes: []

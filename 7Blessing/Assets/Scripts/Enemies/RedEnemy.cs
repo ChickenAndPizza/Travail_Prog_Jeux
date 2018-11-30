@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QInventory;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -60,6 +61,7 @@ public class RedEnemy : Enemies, Attackable
         health -= damage;
         if(health <= 0)
         {
+            GetComponent<DropItem>().DropItems();
             StartCoroutine(Death());
             
         }

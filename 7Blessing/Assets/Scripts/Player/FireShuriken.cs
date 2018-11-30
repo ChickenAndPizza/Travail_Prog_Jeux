@@ -21,6 +21,8 @@ public class FireShuriken : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        isUnlocked = GetComponentInParent<PlayerStats>().shurikenUnlocked;
+
         timeLastFired += Time.deltaTime;
         if(GetComponentInParent<Player_Move_Prot>().facingLeft)
         {

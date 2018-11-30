@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,6 +66,7 @@ namespace QInventory
                     for (int j = 0; j < price.childCount; j++)
                     {
                         priceText.Add(price.GetChild(j).GetChild(0).GetComponent<Text>());
+                        //priceText.Remove(priceText.Last());
                     }
                     ItemData data = itemObj.GetComponent<ItemData>();//更新数据
 
