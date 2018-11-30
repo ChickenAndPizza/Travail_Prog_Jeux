@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss : Enemies, Attackable {
 
     Animator mAnimator;
+    public ParticleSystem BossDeath;
 
     // Use this for initialization
     void Start () {
@@ -39,6 +40,9 @@ public class Boss : Enemies, Attackable {
         if (health < 0)
         {
             health = 0;
+            Instantiate(BossDeath, gameObject.transform);
+            Destroy(gameObject);
+
         }
     }
 

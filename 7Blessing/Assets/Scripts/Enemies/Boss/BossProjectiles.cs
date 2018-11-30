@@ -6,15 +6,33 @@ public class BossProjectiles : MonoBehaviour {
     public float speed;
     private GameObject player;
     private Transform target;
+    
+    [SerializeField] int mageBulletDamage = 5;
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         transform.position += transform.right * speed * Time.deltaTime ;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "Boss")
+        {
+            Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+            if (attackable != null)
+            {
+                attackable.Attacked(mageBulletDamage);
+            }
+
+
+            if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ground")
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

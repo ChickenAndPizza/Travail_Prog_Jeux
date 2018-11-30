@@ -22,11 +22,13 @@ public class Shuriken : MonoBehaviour {
     {
         if (collision.gameObject.tag != "Player")
         {
-
-            Attackable attackable = collision.gameObject.GetComponent<Attackable>();
-            if (attackable != null)
+            if(collision.gameObject.tag != "Protection")
             {
-                attackable.Attacked(shurikenDamage);
+                Attackable attackable = collision.gameObject.GetComponent<Attackable>();
+                if (attackable != null)
+                {
+                    attackable.Attacked(shurikenDamage);
+                }
             }
 
             DestroyShuriken();

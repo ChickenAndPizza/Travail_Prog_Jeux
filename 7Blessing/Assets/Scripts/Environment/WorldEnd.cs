@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class WorldEnd : MonoBehaviour
 {
-
     void OnTriggerEnter2D(Collider2D col)
     {
         Attackable attackable = col.gameObject.GetComponent<Attackable>();

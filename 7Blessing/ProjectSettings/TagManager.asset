@@ -21,6 +21,9 @@ TagManager:
   - SkillBar
   - Boss
   - VendorPanel
+  - CurrentHealth
+  - BossHead
+  - Protection
   layers:
   - Default
   - TransparentFX
