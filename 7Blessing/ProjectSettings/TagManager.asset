@@ -13,12 +13,13 @@ TagManager:
   - RedPotion
   - GreenPotion
   - YellowFeather
-  - Craft
-  - Storage
   - Vendor
-  - SkillBar
-  - Equipment
   - Inventory
+  - Equipment
+  - Storage
+  - Craft
+  - SkillBar
+  - Boss
   - VendorPanel
   layers:
   - Default
@@ -34,7 +35,7 @@ TagManager:
   - Interaction
   - Ennemies
   - Wall
-  - 
+  - Boss
   - 
   - 
   - 
@@ -77,4 +78,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1613868927
+    locked: 0
+  - name: Pit
+    uniqueID: 3130766935
     locked: 0
