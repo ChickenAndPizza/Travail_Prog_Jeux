@@ -23,7 +23,6 @@ public class Player_Move_Prot : MonoBehaviour {
     private Animator mAnimator;
     private Rigidbody2D mPlayerBody;
     private AudioSource mAudioSource;
-    public AudioClip groundedSound;
     private void Awake()
     {
         int numberOfPlayer = FindObjectsOfType<Player_Move_Prot>().Length;
@@ -176,7 +175,6 @@ public class Player_Move_Prot : MonoBehaviour {
         if (other.gameObject.CompareTag("Ground"))
         {
             jumping = false;
-            mAudioSource.PlayOneShot(groundedSound);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
