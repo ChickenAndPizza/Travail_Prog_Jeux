@@ -7,5 +7,6 @@ public abstract class Enemies : MonoBehaviour {
     public int health;
     public int defense;
     public int attack;
+    public int maxHealth;
 
 }

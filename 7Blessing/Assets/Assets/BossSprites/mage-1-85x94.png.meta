@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 82d123f3bb387d840bf0b0af6640218d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mage-1-85x94_0
+    21300002: mage-1-85x94_1
+    21300004: mage-1-85x94_2
+    21300006: mage-1-85x94_3
+    21300008: mage-1-85x94_4
+    21300010: mage-1-85x94_5
+    21300012: mage-1-85x94_6
+    21300014: mage-1-85x94_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -137,7 +145,167 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mage-1-85x94_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 94
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1e55378637bb2449cd65aebc41c5d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 94
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19231f32626ce3145a2ce8f5c83c8e0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 94
+        width: 82
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5b884b4f9aad74994f07657d91900d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 94
+        width: 85
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92de8addf384239488b7c38085309f1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 82
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1848b067700944aa2fcb375d75cf96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_5
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5ae941db5e4d1479a24072c86faa52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 82
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a5cdb03705077439eafb689f2f01d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-1-85x94_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8cd5a81fbe5da449de20851ada699e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
