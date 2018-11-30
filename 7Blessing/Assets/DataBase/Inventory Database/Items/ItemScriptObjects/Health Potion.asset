@@ -20,7 +20,9 @@ MonoBehaviour:
   description: "\xC0 boire pour r\xE9cup\xE9rer de la vitalit\xE9"
   variety: 0
   rarity: 1
-  buy_Price: []
+  buy_Price:
+  - currency: {fileID: 11400000, guid: 661f9a62dfb8c8e459d97f8030548e16, type: 2}
+    amount: 5
   sell_Price: []
   clipOnUse: {fileID: 0}
   playClipTimes: 0

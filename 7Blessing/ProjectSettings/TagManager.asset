@@ -20,7 +20,7 @@ TagManager:
   - Craft
   - SkillBar
   - Boss
-  - BossHead
+  - VendorPanel
   layers:
   - Default
   - TransparentFX
@@ -36,8 +36,8 @@ TagManager:
   - Ennemies
   - Wall
   - Boss
-  - BossHead
-  - BossBody
+  - 
+  - 
   - 
   - 
   - 
@@ -78,4 +78,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1613868927
+    locked: 0
+  - name: Pit
+    uniqueID: 3130766935
     locked: 0

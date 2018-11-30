@@ -13,8 +13,18 @@ public class EndingSceneDialog : Interaction {
     private AudioSource audioSource;
     public override void Interact()
     {
-        audioSource.PlayOneShot(endingSound);
-        dialogManager.StartDialog(dialogText);
+        if(endingSound != null)
+        {
+            audioSource.PlayOneShot(endingSound);
+        }
+        if(dialogText != null)
+        {
+            dialogManager.StartDialog(dialogText);
+        }
+        else
+        {
+            NextScene();
+        }
     }
 
     // Use this for initialization
@@ -27,7 +37,7 @@ public class EndingSceneDialog : Interaction {
 		if(nextSceneName != null)
         {
             GameObject music = GameObject.FindGameObjectWithTag("MusicPlayer");
-            if (music != null)
+            if (music != null && nextSceneSound != null)
             {
                 MusicPlayer musicPlayer = music.GetComponent<MusicPlayer>();
                 musicPlayer.ChangeMusic(nextSceneSound);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using QInventory;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -83,6 +84,7 @@ public class PurpleEnemy : Enemies, Attackable
         Instantiate(bloodEffect, gameObject.transform);
         if (health <= 0)
         {
+            GetComponent<DropItem>().DropItems();
             StartCoroutine(Death());
         }
 

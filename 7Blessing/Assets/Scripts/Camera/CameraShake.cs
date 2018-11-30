@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
-    [SerializeField] Camera mainCam;
+    [SerializeField]public Camera mainCam;
 
     float shakeAmount = 0;
 
