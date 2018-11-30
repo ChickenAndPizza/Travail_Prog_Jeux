@@ -100,7 +100,7 @@ namespace QInventory
                     data.inv = this;
 
                     //加inputfield
-                    data.inputField = itemObj.transform.Find("Button").Find("InputField").GetComponent<InputField>();
+                    //data.inputField = itemObj.transform.Find("Button").Find("InputField").GetComponent<InputField>();
 
                     //如果是限定合成移除，则只能造一个，禁用inputfield
                     if (data.moveAfterPurchase)

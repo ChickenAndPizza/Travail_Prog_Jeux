@@ -24,7 +24,7 @@ namespace QInventory
         public bool isCrafting = false;
         [HideInInspector]
         public int amountToCraft;
-        [HideInInspector]
+        
         public int amountToBuy;
 
         //[HideInInspector]
@@ -250,7 +250,6 @@ namespace QInventory
             }
 
             amountToBuy = 1;
-            inputField.text = amountToBuy.ToString();
         }
 
         //卖东西
