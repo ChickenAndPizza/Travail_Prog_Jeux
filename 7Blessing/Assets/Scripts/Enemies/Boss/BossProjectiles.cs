@@ -20,7 +20,7 @@ public class BossProjectiles : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Boss")
+        if (collision.gameObject.tag != "Boss" && collision.gameObject.tag != "BossHead" && collision.gameObject.tag != "Protection" && collision.gameObject.tag != "Untagged")
         {
             Attackable attackable = collision.gameObject.GetComponent<Attackable>();
             if (attackable != null)

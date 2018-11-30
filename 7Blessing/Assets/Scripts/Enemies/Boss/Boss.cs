@@ -61,4 +61,11 @@ public class Boss : Enemies, Attackable {
         mAnimator.SetTrigger("StartFight");
         player.EnableControl();
     }
+
+    public void TransitionToPhase2()
+    {
+        Player_Move_Prot player = FindObjectOfType<Player_Move_Prot>();
+        mAnimator.SetTrigger("StartPhase2");
+        player.EnableControl();
+    }
 }

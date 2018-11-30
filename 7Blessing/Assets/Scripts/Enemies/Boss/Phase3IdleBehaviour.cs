@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Phase3IdleBehaviour : StateMachineBehaviour {
-
+    
     private Transform IdlePosition;
     public float speed;
 
@@ -14,7 +14,7 @@ public class Phase3IdleBehaviour : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = Random.Range(minTime, maxTime);
-        IdlePosition = FindObjectOfType<IdlePhase2Position>().idlePhase2Position;
+        IdlePosition = FindObjectOfType<IdlePhase3Position>().idlePhase3Position;
     }
 
 
@@ -22,7 +22,7 @@ public class Phase3IdleBehaviour : StateMachineBehaviour {
     {
         if (timer <= 0)
         {
-            animator.SetTrigger("Phase2Attack");
+            animator.SetTrigger("Phase3Attack");
         }
         else
         {
