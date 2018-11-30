@@ -69,7 +69,17 @@ public class HealthBar : MonoBehaviour, Attackable
         camShake.Shake(shakeAmount,shakeLength);
         if(currentHitPoints <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GetComponentInParent<PlayerStats>().lives --;
+            if(GetComponentInParent<PlayerStats>().lives == 0)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Destroy(player);
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             GetComponentInParent<PlayerStats>().health = maxHitPoints;
 
 
