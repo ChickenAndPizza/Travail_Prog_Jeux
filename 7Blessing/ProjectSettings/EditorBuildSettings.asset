@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Sandboxes/Sandbox_Alice.unity
     guid: 29aeb39c55889c6488a36c620726010d
   - enabled: 1
+    path: Assets/Scenes/CrystalCave.unity
+    guid: 7f24ee56ca9394847894e84d7720678a
+  - enabled: 1
     path: Assets/Scenes/Conclusion.unity
     guid: 2077522cf42aacf4ebb49d89461763ce
   - enabled: 0

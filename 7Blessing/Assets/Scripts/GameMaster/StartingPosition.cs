@@ -15,7 +15,6 @@ public class StartingPosition : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
-        print("test");
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = gameObject.transform.position;
         rigidBody2D = player.GetComponent<Rigidbody2D>();
