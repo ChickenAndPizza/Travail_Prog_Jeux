@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour {
     public int attack = 20;
     public int jumpPower = 5;
     public int speed = 10;
+    public int lives = 3;
     public int defense = 0;
     public bool shurikenUnlocked = false;
     public bool doubleJumpUnlocked = false;
