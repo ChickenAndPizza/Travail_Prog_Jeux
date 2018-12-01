@@ -30,6 +30,7 @@ public class Boss : Enemies, Attackable {
     public void Attacked(int damage)
     {
         health -= damage;
+        StartCoroutine(Flash());
         if (((float)health / (float)maxHealth) < 0.25f)
         {
             mAnimator.SetTrigger("TriggerPhase3Idle");
@@ -37,11 +38,11 @@ public class Boss : Enemies, Attackable {
         {
             mAnimator.SetTrigger("TriggerPhase2Idle");
         }
-        if (health < 0)
+        if (health <= 0)
         {
-            health = 0;
             Instantiate(BossDeath, gameObject.transform);
-            Destroy(gameObject);
+            mAnimator.SetTrigger("Death");
+            health = 0;
 
         }
     }
@@ -67,5 +68,26 @@ public class Boss : Enemies, Attackable {
         Player_Move_Prot player = FindObjectOfType<Player_Move_Prot>();
         mAnimator.SetTrigger("StartPhase2");
         player.EnableControl();
+    }
+
+    void FlashBoss()
+    {
+        SpriteRenderer  renderer = GetComponent<SpriteRenderer>();
+        renderer.material.SetFloat("_FlashAmount", 0.8f);
+    }
+    IEnumerator Flash()
+    {
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.material.SetFloat("_FlashAmount", 0.8f);
+        yield return new WaitForSeconds(0.1f);
+        renderer.material.SetFloat("_FlashAmount", 0f);
+        yield return new WaitForSeconds(0.1f);
+        renderer.material.SetFloat("_FlashAmount", 0.8f);
+        yield return new WaitForSeconds(0.1f);
+        renderer.material.SetFloat("_FlashAmount", 0f);
+    }
+    public void KillBoss()
+    {
+        Destroy(gameObject);
     }
 }
