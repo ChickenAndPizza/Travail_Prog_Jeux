@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Forest Scene");
+        SceneManager.LoadScene("FirstScene");
     }
 
     public void QuitGame()

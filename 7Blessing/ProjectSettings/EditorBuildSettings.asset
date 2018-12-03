@@ -15,24 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Water Scene.unity
-    guid: 3c93c284673afad49a6535e94786593d
-  - enabled: 1
     path: Assets/Scenes/Jungle Scene.unity
     guid: 29aeb39c55889c6488a36c620726010d
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/7f24ee56ca9394847894e84d7720678a
-    guid: 7f24ee56ca9394847894e84d7720678a
-  - enabled: 1
-    path: Assets/Scenes/Conclusion.unity
-    guid: 2077522cf42aacf4ebb49d89461763ce
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 576dcdfd9bbbe0c43b61abdbb94c214e
   - enabled: 1
     path: Assets/Scenes/CrystalCave.unity
     guid: f875ef6b48ea619439a9f3d9bb5c0bcb
+  - enabled: 1
+    path: Assets/Scenes/Conclusion.unity
+    guid: 2077522cf42aacf4ebb49d89461763ce
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 576dcdfd9bbbe0c43b61abdbb94c214e
   m_configObjects: {}

@@ -15,11 +15,13 @@ public class EndingSceneDialog : Interaction {
     {
         if(endingSound != null)
         {
-            audioSource.PlayOneShot(endingSound);
+           // audioSource.PlayOneShot(endingSound);
         }
         if(dialogText != null)
         {
+            print(dialogManager);
             dialogManager.StartDialog(dialogText);
+            audioSource.PlayOneShot(endingSound);
         }
         else
         {
@@ -29,8 +31,10 @@ public class EndingSceneDialog : Interaction {
 
     // Use this for initialization
     void Awake () {
+        print(GameObject.FindGameObjectWithTag("DialogManager"));
         dialogManager = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<DialogManager>();
         audioSource = GetComponent<AudioSource>();
+        print("hey");
     }
 
     public void NextScene() {
