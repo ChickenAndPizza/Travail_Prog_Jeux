@@ -59,7 +59,7 @@ public class RedEnemy : Enemies, Attackable
         audioSource.PlayOneShot(dammageSound);
         Instantiate(bloodEffect, gameObject.transform);
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             GetComponent<DropItem>().DropItems();
             StartCoroutine(Death());
@@ -70,6 +70,7 @@ public class RedEnemy : Enemies, Attackable
     IEnumerator Death()
     {
         this.enabled = false;
+
         yield return new WaitForSeconds(0.3f);
         DestroyMonster();
     }

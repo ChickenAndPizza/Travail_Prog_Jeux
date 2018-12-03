@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114380421734084346}
   m_Layer: 11
   m_Name: PurpleEnemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669610234254762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.483248, y: -2.3764925, z: 0.046081647}
+  m_LocalPosition: {x: 29.32, y: -6.34, z: 0.046081647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4214443580405738}
@@ -247,6 +247,7 @@ MonoBehaviour:
   health: 40
   defense: 1
   attack: 10
+  maxHealth: 40
   dammageSound: {fileID: 8300000, guid: 369837d40ddcfd94cbbc9e03f7911525, type: 3}
   movementVector: {x: 2, y: 10}
   period: 10

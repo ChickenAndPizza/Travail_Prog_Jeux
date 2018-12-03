@@ -8,6 +8,5 @@ public class TransitionPhase2 : StateMachineBehaviour {
     {
         player = FindObjectOfType<Player_Move_Prot>();
         player.DisableControl();
-
     }
 }

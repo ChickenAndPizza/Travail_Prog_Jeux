@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020637312795408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.21, y: -1.15, z: 0.06201172}
+  m_LocalPosition: {x: 178.459, y: 2.445, z: 0.06201172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4129268155064512}
@@ -316,6 +316,7 @@ MonoBehaviour:
   health: 30
   defense: 1
   attack: 20
+  maxHealth: 30
   dammageSound: {fileID: 8300000, guid: e088a270617bed7478205a44772e847a, type: 3}
   movementVector: {x: 10, y: 10}
   period: 2
