@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using QInventory;
 
 public class StartingPosition : MonoBehaviour {
     [SerializeField] GameObject player;
@@ -27,5 +28,7 @@ public class StartingPosition : MonoBehaviour {
         movement.groundLayer = groundLayer;
         cameraShake = player.GetComponent<CameraShake>();
         cameraShake.mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        var inventoryManager = GameObject.FindGameObjectWithTag("Q_GameMaster").GetComponentInChildren<InventoryManager>();
+        inventoryManager.player = GameObject.FindGameObjectWithTag("Player");
     }
 }

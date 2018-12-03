@@ -24,6 +24,7 @@ TagManager:
   - CurrentHealth
   - BossHead
   - Protection
+  - Q_GameMaster
   layers:
   - Default
   - TransparentFX
