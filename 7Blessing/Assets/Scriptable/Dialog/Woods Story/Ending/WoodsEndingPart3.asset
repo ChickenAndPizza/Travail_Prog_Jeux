@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: WoodsEndingPart3
   m_EditorClassIdentifier: 
   scriptableText: "Ce pouvoir vous permet de vous d\xE9fendre \xE0 distance en appuyant
-    sur la touche \" \"."
+    sur la touche \" Shift \"."
   nextDialog: {fileID: 11400000, guid: 6f131279b3f8d9540a9c5ef9d41250fa, type: 2}
   IsChangingSceneDialog: 0
+  IsConclusionDialog: 0
