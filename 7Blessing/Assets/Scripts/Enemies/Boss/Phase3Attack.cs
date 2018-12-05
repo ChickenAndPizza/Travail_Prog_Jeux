@@ -27,7 +27,7 @@ public class Phase3Attack : StateMachineBehaviour {
     {
         if (timer <= 0)
         {
-            animator.SetTrigger("TriggerPhase3Idle");
+            animator.SetTrigger("StartPhase3");
         }
         else
         {

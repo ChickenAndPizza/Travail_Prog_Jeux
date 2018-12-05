@@ -70,6 +70,13 @@ public class Boss : Enemies, Attackable {
         player.EnableControl();
     }
 
+    public void TransitionToPhase3()
+    {
+        Player_Move_Prot player = FindObjectOfType<Player_Move_Prot>();
+        mAnimator.SetTrigger("StartPhase3");
+        player.EnableControl();
+    }
+
     void FlashBoss()
     {
         SpriteRenderer  renderer = GetComponent<SpriteRenderer>();

@@ -14,7 +14,6 @@ public class Phase2CloseAttack : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = Random.Range(minTime, maxTime);
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     
 
@@ -28,6 +27,7 @@ public class Phase2CloseAttack : StateMachineBehaviour {
         {
             timer -= Time.deltaTime;
         }
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Vector2 target = new Vector2(playerPos.position.x, playerPos.position.y);
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
     }
