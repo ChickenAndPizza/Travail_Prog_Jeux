@@ -25,6 +25,7 @@ TagManager:
   - BossHead
   - Protection
   - Q_GameMaster
+  - BossBody
   layers:
   - Default
   - TransparentFX

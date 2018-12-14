@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shurikenLife: 1
   speed: 5
-  shurikenDamage: 5
+  shurikenDamage: 10
   direction: 0
 --- !u!212 &212369692246937138
 SpriteRenderer:

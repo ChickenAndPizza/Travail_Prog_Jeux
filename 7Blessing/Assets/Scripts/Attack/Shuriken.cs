@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shuriken : MonoBehaviour {
     [SerializeField] float shurikenLife = 1;
     [SerializeField] float speed = 5;
-    [SerializeField] int shurikenDamage = 5;
+    [SerializeField] int shurikenDamage = 10;
     public int direction;
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,7 @@ public class Shuriken : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.gameObject.tag);
         if (collision.gameObject.tag != "Player")
         {
             if(collision.gameObject.tag != "Protection")

@@ -11,7 +11,7 @@ public class WorldEnd : MonoBehaviour
         Attackable attackable = col.gameObject.GetComponent<Attackable>();
         if (attackable != null)
         {
-            attackable.Attacked(100);
+            attackable.Attacked(150);
         }
     }
 }

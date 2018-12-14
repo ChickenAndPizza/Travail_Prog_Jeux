@@ -15,6 +15,7 @@ public class ConclusionDialog : MonoBehaviour {
         dialogManager.StartDialog(dialogText);
         var player = GameObject.FindGameObjectWithTag("Player");
         Destroy(player);
+        var musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<MusicPlayer>();
     }
 
     public void ActivateMenu()

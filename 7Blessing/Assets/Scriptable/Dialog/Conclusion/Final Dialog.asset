@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab4e9b3cf0b06848ac2211b717eb181, type: 3}
   m_Name: Final Dialog
   m_EditorClassIdentifier: 
-  scriptableText: Tu viens de finir le jeu, bravo!
+  scriptableText: Tu viens de finir la partie 1 du jeu, bravo! Mais si tu veux voir
+    le reste, tu devra acheter la partie 2.
   nextDialog: {fileID: 0}
   IsChangingSceneDialog: 0
   IsConclusionDialog: 1

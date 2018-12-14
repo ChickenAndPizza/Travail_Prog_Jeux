@@ -5,7 +5,8 @@ using UnityEngine;
 public class Phase3Attack : StateMachineBehaviour {
 
     public float fireRate = 1;
-    private BossShooting boss;
+    private BossShooting bossShoot;
+    private Boss boss;
 
     private float timerLastFired = 0;
 
@@ -20,7 +21,8 @@ public class Phase3Attack : StateMachineBehaviour {
     {
         timer = Random.Range(minTime, maxTime);
         AttackPosition = FindObjectOfType<AttackPosition>().attackPosition;
-        boss = FindObjectOfType<BossShooting>();
+        bossShoot = FindObjectOfType<BossShooting>();
+        boss = FindObjectOfType<Boss>();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,7 +41,9 @@ public class Phase3Attack : StateMachineBehaviour {
             timerLastFired += Time.deltaTime;
             if (timerLastFired > fireRate)
             {
-                boss.Shoot();
+                bossShoot.Shoot();
+
+                boss.PlayAttackSound();
                 timerLastFired = 0;
             }
         }

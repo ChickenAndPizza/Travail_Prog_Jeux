@@ -6,6 +6,8 @@ public class Boss : Enemies, Attackable {
 
     Animator mAnimator;
     public ParticleSystem BossDeath;
+    public AudioClip Death;
+    public AudioClip AttackSound;
 
     // Use this for initialization
     void Start () {
@@ -96,5 +98,24 @@ public class Boss : Enemies, Attackable {
     public void KillBoss()
     {
         Destroy(gameObject);
+    }
+
+    public void BossBattleTrack(AudioClip bossTrack)
+    {
+        if(bossTrack != null)
+        {
+            MusicPlayer mp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<MusicPlayer>();
+            mp.ChangeMusic(bossTrack);
+        }
+    }
+    public void PlayAttackSound()
+    {
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(AttackSound);
+    }
+    public void PlayDeathSound()
+    {
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(Death);
     }
 }

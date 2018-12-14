@@ -19,6 +19,7 @@ public class DeathBehaviour : StateMachineBehaviour {
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        boss.PlayDeathSound();
         Color tmp = angel.GetComponent<SpriteRenderer>().color;
         tmp.a = 1;
         angel.GetComponent<SpriteRenderer>().color = tmp;
